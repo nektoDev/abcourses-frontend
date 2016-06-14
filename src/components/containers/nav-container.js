@@ -1,12 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Nav from '../views/nav/';
 
-const HeaderContainer = React.createClass({
-
+const NavContainer = React.createClass({
     render: function() {
-        return <Nav />;
+        return <Nav showNav={this.props.showNav}/>;
     }
 });
 
-export default Nav;
+const mapStateToProps = function(store) {
+    return {
+        showNav: store.navState.showNav
+    };
+};
+
+export default connect(mapStateToProps)(NavContainer);

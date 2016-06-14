@@ -7,6 +7,7 @@ export default function (props) {
     return (
         <div className="header">
             <AppBar
+
                 ref="navBar"
                 zDepth={2}
                 className="app-bar"
