@@ -3,8 +3,8 @@ import {green700, lightBlue500} from 'material-ui/styles/colors';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import Header from '../../views/header';
-import Nav from '../../views/nav';
+import HeaderContainer from '../../containers/header-container';
+import NavContainer from '../../containers/nav-container';
 
 const muiTheme = getMuiTheme({
     palette: {
@@ -20,8 +20,8 @@ export default function (props) {
     return (
         <MuiThemeProvider muiTheme={muiTheme}>
             <div>
-                <Header/>
-                <Nav/>
+                <HeaderContainer/>
+                <NavContainer/>
                 <div className="content">
                     {props.children}
                 </div>
