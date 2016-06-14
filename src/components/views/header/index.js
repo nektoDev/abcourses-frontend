@@ -3,17 +3,18 @@ import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
 
-export default function (props) {
-    return (
-        <div className="header">
-            <AppBar
+var Header = React.createClass({
+    render: function() {
+        return (
+            <div className="header">
+                <AppBar
 
-                ref="navBar"
-                zDepth={2}
-                className="app-bar"
-                title="Title"
-                onLeftIconButtonTouchTap={props.handleTouchNavButton.bind(null, "test")}
-                iconElementRight={
+                    ref="navBar"
+                    zDepth={2}
+                    className="app-bar"
+                    title="Title"
+                    onLeftIconButtonTouchTap={this.props.handleTouchNavButton.bind(null, null)}
+                    iconElementRight={
                     <div className="app-bar-icons">
                         <IconButton tooltip="shuffle">
                             <FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">shuffle</FontIcon>
@@ -23,8 +24,10 @@ export default function (props) {
                         </IconButton>
                     </div>
                     }
-            />
-        </div>
-    );
-}
+                />
+            </div>
+        );
+    }
+});
 
+export default Header;
