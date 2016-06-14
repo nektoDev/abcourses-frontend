@@ -1,0 +1,9 @@
+.app-bar {
+    position: fixed !important;
+    top: 0;
+    z-index: 1301;
+}
+
+.app-bar > .app-bar-icons {
+    color: #fff !important;
+}
