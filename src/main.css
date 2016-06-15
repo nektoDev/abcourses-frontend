@@ -30,3 +30,11 @@ body {
     /* Support for IE. */
     font-feature-settings: 'liga';
 }
+
+.card {
+    margin: 5px;
+}
+
+.card .link {
+    cursor: pointer;
+}

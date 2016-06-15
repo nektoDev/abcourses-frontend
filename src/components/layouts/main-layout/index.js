@@ -7,6 +7,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import HeaderContainer from '../../containers/header-container';
 import NavContainer from '../../containers/nav-container';
+const {Grid} = require('react-flexgrid');
 
 const muiTheme = getMuiTheme({
     palette: {
@@ -32,9 +33,9 @@ var MainLayout = React.createClass({
                 <div>
                     <HeaderContainer/>
                     <NavContainer/>
-                    <div className="content markdown-body" style={this.styles()}>
+                    <Grid className="content markdown-body" style={this.styles()}>
                         {this.props.children}
-                    </div>
+                    </Grid>
                 </div>
             </MuiThemeProvider>
         );

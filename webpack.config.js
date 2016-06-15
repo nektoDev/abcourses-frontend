@@ -9,6 +9,7 @@ module.exports = {
         'webpack/hot/only-dev-server',
         './src/main.js',
         './src/main.css',
+        'react-flexgrid/lib/flexgrid.css'
     ],
     output: {
         path: path.join(__dirname, 'dist'),

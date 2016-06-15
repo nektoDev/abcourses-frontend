@@ -11,7 +11,7 @@ const Nav = React.createClass({
             <Drawer open={this.props.showNav} docked={this.props.docked}>
                 <div className="left-nav">
                     <MenuItem containerElement={<Link to="/div" />}>Menu Item 1</MenuItem>
-                    <Link to="/aiy"><MenuItem>Menu Item 2</MenuItem></Link>
+                    <MenuItem containerElement={<Link to="/aiy" />}>Menu Item 2</MenuItem>
                 </div>
             </Drawer>
         )
