@@ -32,9 +32,8 @@ var MainLayout = React.createClass({
                 <div>
                     <HeaderContainer/>
                     <NavContainer/>
-                    <div className="content" style={this.styles()}>
-                        <h1>{this.props.width}</h1>
-                        {this.props.isMobile ? "T" : "F"}
+                    <div className="content markdown-body" style={this.styles()}>
+                        {this.props.children}
                     </div>
                 </div>
             </MuiThemeProvider>
