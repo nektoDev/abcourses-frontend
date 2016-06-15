@@ -7,7 +7,7 @@ const Nav = React.createClass({
     render: function () {
 
         return (
-            <Drawer open={this.props.showNav}>
+            <Drawer open={this.props.showNav} docked={this.props.docked}>
                 <div className="left-nav">
                     <MenuItem>Menu Item 1</MenuItem>
                     <MenuItem>Menu Item 2</MenuItem>
