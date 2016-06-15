@@ -23,7 +23,7 @@ const muiTheme = getMuiTheme({
 var MainLayout = React.createClass({
 
     styles: function() {
-        return {"padding-left" : !this.props.isMobile && this.props.showNav ? "256px" : "0px"}
+        return {"paddingLeft" : !this.props.isMobile && this.props.showNav ? "256px" : "0px"}
     },
 
     render: function () {
