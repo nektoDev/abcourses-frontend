@@ -12,6 +12,10 @@ const NavReducer = function(state = initialState, action) {
             return Object.assign({}, state, {
                 showNav: false
             });
+        case "SHOW_NAV":
+            return Object.assign({}, state, {
+                showNav: true
+            });
     }
     return state;
 };

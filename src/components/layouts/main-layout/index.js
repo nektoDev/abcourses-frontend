@@ -23,7 +23,7 @@ const muiTheme = getMuiTheme({
 var MainLayout = React.createClass({
 
     styles: function() {
-        return {"padding-left" : this.props.showNav ? "256px" : "0px"}
+        return {"padding-left" : !this.props.isMobile && this.props.showNav ? "256px" : "0px"}
     },
 
     render: function () {
@@ -33,7 +33,8 @@ var MainLayout = React.createClass({
                     <HeaderContainer/>
                     <NavContainer/>
                     <div className="content" style={this.styles()}>
-                        {this.props.children}
+                        <h1>{this.props.width}</h1>
+                        {this.props.isMobile ? "T" : "F"}
                     </div>
                 </div>
             </MuiThemeProvider>
@@ -44,7 +45,8 @@ var MainLayout = React.createClass({
 
 const mapStateToProps = function(store) {
     return {
-        showNav: store.navState.showNav
+        showNav: store.navState.showNav,
+        isMobile: store.browser.lessThan.medium
     };
 };
 
