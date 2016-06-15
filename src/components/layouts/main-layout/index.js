@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+
 import {green700, lightBlue500} from 'material-ui/styles/colors';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -16,17 +18,35 @@ const muiTheme = getMuiTheme({
     }
 });
 
-export default function (props) {
-    return (
-        <MuiThemeProvider muiTheme={muiTheme}>
-            <div>
-                <HeaderContainer/>
-                <NavContainer/>
-                <div className="content">
-                    {props.children}
-                </div>
-            </div>
-        </MuiThemeProvider>
-    );
-}
 
+
+var MainLayout = React.createClass({
+
+    styles: function() {
+        return {"padding-left" : this.props.showNav ? "256px" : "0px"}
+    },
+
+    render: function () {
+        return (
+            <MuiThemeProvider muiTheme={muiTheme}>
+                <div>
+                    <HeaderContainer/>
+                    <NavContainer/>
+                    <div className="content" style={this.styles()}>
+                        {this.props.children}
+                    </div>
+                </div>
+            </MuiThemeProvider>
+        );
+    }
+});
+
+
+const mapStateToProps = function(store) {
+    return {
+        showNav: store.navState.showNav
+    };
+};
+
+
+export default connect(mapStateToProps)(MainLayout);
