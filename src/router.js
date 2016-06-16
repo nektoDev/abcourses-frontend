@@ -5,7 +5,7 @@ import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import MainLayout from './components/layouts/main-layout';
 
 //Components
-import Home from './components/home'
+import Home from './components/containers/home-container'
 import Div from './components/div'
 import Aiy from './components/aiy'
 
