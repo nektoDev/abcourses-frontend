@@ -15,7 +15,7 @@ export default function (props) {
                             <CardMedia
                                 overlay={<CardTitle title="Vocabulary" subtitle="Try to remember all the words" />}
                             >
-                                <img src="http://lorempixel.com/600/400/nature/"/>
+                                <img src="http://dummyimage.com/600x400/FF5722/FF5722.png"/>
                             </CardMedia>
                         </Card>
                     </Link>
@@ -27,7 +27,7 @@ export default function (props) {
                             <CardMedia
                                 overlay={<CardTitle title="Pronunciation" subtitle="Slava" />}
                             >
-                                <img src="http://lorempixel.com/600/400/abstract?1"/>
+                                <img src="http://dummyimage.com/600x400/FF5722/FF5722.png"/>
                             </CardMedia>
                         </Card>
                     </Link>
@@ -38,7 +38,7 @@ export default function (props) {
                             <CardMedia
                                 overlay={<CardTitle title="Pronunciation" subtitle="Dasha" />}
                             >
-                                <img src="http://lorempixel.com/600/400/abstract?2"/>
+                                <img src="http://dummyimage.com/600x400/FF5722/FF5722.png"/>
                             </CardMedia>
                         </Card>
                     </Link>
@@ -54,7 +54,7 @@ export default function (props) {
                             <CardMedia
                                 overlay={<CardTitle title="Vocabulary" subtitle="Try to remember all the words" />}
                             >
-                                <img src="http://lorempixel.com/600/400/nature/"/>
+                                <img src="http://dummyimage.com/600x400/FF5722/FF5722.png"/>
                             </CardMedia>
                         </Card>
                     </Link>
@@ -66,7 +66,7 @@ export default function (props) {
                             <CardMedia
                                 overlay={<CardTitle title="Pronunciation" subtitle="Aydar" />}
                             >
-                                <img src="http://lorempixel.com/600/400/abstract?3"/>
+                                <img src="http://dummyimage.com/600x400/FF5722/FF5722.png"/>
                             </CardMedia>
                         </Card>
                     </Link>
@@ -77,7 +77,7 @@ export default function (props) {
                             <CardMedia
                                 overlay={<CardTitle title="Pronunciation" subtitle="Yulia" />}
                             >
-                                <img src="http://lorempixel.com/600/400/abstract?4"/>
+                                <img src="http://dummyimage.com/600x400/FF5722/FF5722.png"/>
                             </CardMedia>
                         </Card>
                     </Link>
