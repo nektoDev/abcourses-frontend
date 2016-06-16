@@ -15,7 +15,7 @@ export default function (props) {
                             <CardMedia
                                 overlay={<CardTitle title="Vocabulary" subtitle="Try to remember all the words" />}
                             >
-                                <img src="http://dummyimage.com/600x400/FF5722/FF5722.png"/>
+                                <img src="http://lorempixel.com/600/400/nature/1"/>
                             </CardMedia>
                         </Card>
                     </Link>
@@ -23,22 +23,22 @@ export default function (props) {
 
                 <Col lg={4} sm={12} md={12}>
                     <Link to="/div">
-                        <Card className="card"  zDepth={2}>
+                        <Card className="card" zDepth={2}>
                             <CardMedia
                                 overlay={<CardTitle title="Pronunciation" subtitle="Slava" />}
                             >
-                                <img src="http://dummyimage.com/600x400/FF5722/FF5722.png"/>
+                                <img src="http://lorempixel.com/600/400/abstract?1"/>
                             </CardMedia>
                         </Card>
                     </Link>
                 </Col>
                 <Col lg={4} sm={12} md={12}>
                     <Link to="/div">
-                        <Card className="card"  zDepth={2}>
+                        <Card className="card" zDepth={2}>
                             <CardMedia
                                 overlay={<CardTitle title="Pronunciation" subtitle="Dasha" />}
                             >
-                                <img src="http://dummyimage.com/600x400/FF5722/FF5722.png"/>
+                                <img src="http://lorempixel.com/600/400/abstract?2"/>
                             </CardMedia>
                         </Card>
                     </Link>
@@ -50,11 +50,11 @@ export default function (props) {
             <Row>
                 <Col lg={4} sm={12} md={12}>
                     <Link to="/aiy">
-                        <Card className="card"  zDepth={2}>
+                        <Card className="card" zDepth={2}>
                             <CardMedia
                                 overlay={<CardTitle title="Vocabulary" subtitle="Try to remember all the words" />}
                             >
-                                <img src="http://dummyimage.com/600x400/FF5722/FF5722.png"/>
+                                <img src="http://lorempixel.com/600/400/nature/"/>
                             </CardMedia>
                         </Card>
                     </Link>
@@ -62,11 +62,11 @@ export default function (props) {
 
                 <Col lg={4} sm={12} md={12}>
                     <Link to="/aiy">
-                        <Card className="card"  zDepth={2}>
+                        <Card className="card" zDepth={2}>
                             <CardMedia
                                 overlay={<CardTitle title="Pronunciation" subtitle="Aydar" />}
                             >
-                                <img src="http://dummyimage.com/600x400/FF5722/FF5722.png"/>
+                                <img src="http://lorempixel.com/600/400/abstract?3"/>
                             </CardMedia>
                         </Card>
                     </Link>
@@ -77,7 +77,7 @@ export default function (props) {
                             <CardMedia
                                 overlay={<CardTitle title="Pronunciation" subtitle="Yulia" />}
                             >
-                                <img src="http://dummyimage.com/600x400/FF5722/FF5722.png"/>
+                                <img src="http://lorempixel.com/600/400/abstract?4"/>
                             </CardMedia>
                         </Card>
                     </Link>
