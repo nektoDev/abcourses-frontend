@@ -1,3 +1,22 @@
 .left-nav {
     padding-top: 65px;
 }
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.341176) !important;
+    text-align: center !important;
+    padding-left: 0 !important;
+}
+
+.footer p {
+    margin-bottom: 0 !important;
+    line-height: 1rem !important;
+}
+
+.footer * {
+    color: rgba(0, 0, 0, 0.341176);
+    text-decoration: none;
+}

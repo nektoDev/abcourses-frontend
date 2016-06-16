@@ -3,6 +3,9 @@ import {Link} from 'react-router';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import Subheader from 'material-ui/Subheader';
+import IconButton from 'material-ui/IconButton';
+import FontIcon from 'material-ui/FontIcon';
+
 
 const Nav = React.createClass({
 
@@ -17,6 +20,13 @@ const Nav = React.createClass({
                 <div className="left-nav">
                     {getNavigation(this.props.navigation)}
                 </div>
+
+                <Subheader className="footer">
+                    <p><a href="http://nektodev.ru">©2016 Tsykin V.A.</a></p>
+                    <IconButton tooltip="github">
+                        <a href="https://github.com/nektoDev/baskinov-frontend"><FontIcon  color="rgba(0, 0, 0, 0.341176)" className="zmdi zmdi-github" ></FontIcon></a>
+                    </IconButton>
+                </Subheader>
             </Drawer>
         )
     }
