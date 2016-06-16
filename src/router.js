@@ -6,8 +6,8 @@ import MainLayout from './components/layouts/main-layout';
 
 //Components
 import Home from './components/containers/home-container'
+import PronunciationContainer from './components/containers/pronunciation-container'
 import Div from './components/div'
-import Aiy from './components/aiy'
 
 export default (
     <Router history={browserHistory}>
@@ -16,8 +16,7 @@ export default (
             <Route path="/vocabulary" component={Div}>
                 <Route path=":student" component={Div}/>
             </Route>
-            <Route path="/pronunciation" component={Div}>
-                <Route path=":student" component={Div}/>
+            <Route path="/pronunciation/:student" component={PronunciationContainer}>
             </Route>
         </Route>
     </Router>
