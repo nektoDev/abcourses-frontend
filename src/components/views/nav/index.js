@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
+import Subheader from 'material-ui/Subheader';
 
 const Nav = React.createClass({
 
@@ -10,8 +11,14 @@ const Nav = React.createClass({
         return (
             <Drawer open={this.props.showNav} docked={this.props.docked}>
                 <div className="left-nav">
-                    <MenuItem containerElement={<Link to="/div" />}>Menu Item 1</MenuItem>
-                    <MenuItem containerElement={<Link to="/aiy" />}>Menu Item 2</MenuItem>
+                    <Subheader inset={false}>Dasha&Slava</Subheader>
+                    <MenuItem containerElement={<Link to="/div" />}>Vocabulary</MenuItem>
+                    <MenuItem containerElement={<Link to="/div" />}>Slava's Pronunciation</MenuItem>
+                    <MenuItem containerElement={<Link to="/div" />}>Dasha's Pronunciation</MenuItem>
+                    <Subheader inset={false}>Aydar&Yulia</Subheader>
+                    <MenuItem containerElement={<Link to="/aiy" />}>Vocabulary</MenuItem>
+                    <MenuItem containerElement={<Link to="/aiy" />}>Aydar's Pronunciation</MenuItem>
+                    <MenuItem containerElement={<Link to="/aiy" />}>Yulia's Pronunciation</MenuItem>
                 </div>
             </Drawer>
         )
