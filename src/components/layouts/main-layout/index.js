@@ -24,7 +24,9 @@ const muiTheme = getMuiTheme({
 var MainLayout = React.createClass({
 
     styles: function() {
-        return {"paddingLeft" : !this.props.isMobile && this.props.showNav ? "256px" : "0px"}
+        return {"paddingLeft" : !this.props.isMobile && this.props.showNav ? "266px" : "2rem",
+        "margin" : "auto"}
+
     },
 
     render: function () {
@@ -33,7 +35,7 @@ var MainLayout = React.createClass({
                 <div>
                     <HeaderContainer/>
                     <NavContainer/>
-                    <Grid className="content markdown-body" style={this.styles()}>
+                    <Grid className="content markdown-body" fluid={true} style={this.styles()}>
                         {this.props.children}
                     </Grid>
                 </div>
