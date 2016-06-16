@@ -13,8 +13,12 @@ export default (
     <Router history={browserHistory}>
         <Route component={MainLayout}>
             <Route path="/" component={Home}/>
-            <Route path="/div" component={Div}/>
-            <Route path="/aiy" component={Aiy}/>
+            <Route path="/vocabulary" component={Div}>
+                <Route path=":student" component={Div}/>
+            </Route>
+            <Route path="/pronunciation" component={Div}>
+                <Route path=":student" component={Div}/>
+            </Route>
         </Route>
     </Router>
 );

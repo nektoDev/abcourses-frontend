@@ -1,6 +1,10 @@
 import React from 'react';
 import store from '../../store';
 
+//Actions
+import { TOGGLE_NAV } from '../../actions/action-types'
+
+//View
 import Header from '../views/header';
 
 const HeaderContainer = React.createClass({
@@ -11,7 +15,7 @@ const HeaderContainer = React.createClass({
 });
 
 function handleTouchNavButton() {
-    store.dispatch({type: "TOGGLE_NAV"});
+    store.dispatch({type: TOGGLE_NAV});
 }
 
 export default HeaderContainer;
