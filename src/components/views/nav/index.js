@@ -5,6 +5,7 @@ import MenuItem from 'material-ui/MenuItem';
 import Subheader from 'material-ui/Subheader';
 import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
+import Divider from 'material-ui/Divider';
 
 
 const Nav = React.createClass({
@@ -22,8 +23,9 @@ const Nav = React.createClass({
                 </div>
 
                 <Subheader className="footer">
+                    <Divider />
                     <p><a href="http://nektodev.ru">©2016 Tsykin V.A.</a></p>
-                    <IconButton tooltip="github">
+                    <IconButton tooltip="github" tooltipPosition="top-center" tooltipStyle={{color:"#fff !important"}}>
                         <a href="https://github.com/nektoDev/baskinov-frontend"><FontIcon  color="rgba(0, 0, 0, 0.341176)" className="zmdi zmdi-github" ></FontIcon></a>
                     </IconButton>
                 </Subheader>
