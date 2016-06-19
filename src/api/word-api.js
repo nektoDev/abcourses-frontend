@@ -1,6 +1,6 @@
-import {GET_WORDS} from '../actions/action-types';
+import {GET_WORDS, SHOW_ANSWER} from '../actions/action-types';
 import store from '../store';
-import { getPronunciationSuccessAction } from '../actions/words-actions';
+import { getPronunciationSuccessAction, showAnswerAction } from '../actions/words-actions';
 
 var words = []
 
@@ -15,7 +15,8 @@ export function getWords(task, student) {
             id: i,
             word: "accomodation",
             pronunciation: "disintegration",
-            checked: "false",
+            checked: false,
+            isAnswerShow: false
         });
     }
     store.dispatch(getPronunciationSuccessAction(words));
@@ -25,4 +26,3 @@ export function getWords(task, student) {
         words
     };
 }
-

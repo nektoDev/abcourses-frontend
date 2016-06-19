@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import store from '../../store';
 
 import * as wordsApi from '../../api/word-api';
+import {toggleAnswerAction} from '../../actions/words-actions'
 
-import Pronunciation from '../views/pronunciation';
+import Pronunciation from '../views/pronunciation/index';
 
 const PronunciationContainer = React.createClass({
 
@@ -13,9 +15,13 @@ const PronunciationContainer = React.createClass({
 
 
     render: function() {
-        return <Pronunciation words={this.props.words} student={this.props.params.student}/>;
+        return <Pronunciation words={this.props.words} student={this.props.params.student} showAnswerHandler={showAnswer}/>;
     }
 });
+
+function showAnswer(word) {
+    store.dispatch(toggleAnswerAction(word));
+}
 
 const mapStateToProps = function(store) {
     return {
