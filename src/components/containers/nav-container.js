@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import store from '../../store';
 
 //Actions
+import {HIDE_NAV} from '../../actions/action-types';
 
 //View
 import Nav from '../views/nav/';

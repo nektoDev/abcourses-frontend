@@ -38,3 +38,7 @@ body {
 .card .link {
     cursor: pointer;
 }
+
+.word-paper {
+    padding: 1rem;
+}

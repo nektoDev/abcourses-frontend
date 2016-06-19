@@ -13,8 +13,8 @@ export function getWords(task, student) {
     for (var i = 0; i < 30; i++) {
         words.push({
             id: i,
-            word: "test",
-            pronunciation: "test",
+            word: "accomodation",
+            pronunciation: "disintegration",
             checked: "false",
         });
     }

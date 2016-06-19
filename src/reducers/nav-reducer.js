@@ -57,7 +57,7 @@ var aiy = {
 };
 
 const initialState = {
-    showNav: true,
+    showNav: false,
     navigation: [
         div,
         aiy

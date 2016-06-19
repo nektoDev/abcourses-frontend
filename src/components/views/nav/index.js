@@ -9,7 +9,6 @@ import Divider from 'material-ui/Divider';
 
 
 const Nav = React.createClass({
-
     render: function () {
 
         if (this.props.navigation === null) {
