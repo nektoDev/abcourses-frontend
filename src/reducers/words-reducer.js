@@ -34,7 +34,6 @@ const WordsReducer = function(state = initialState, action) {
                 words: replaceWord(state.words, newWord, action.word.id)
             });
         case Actions.SHUFFLE:
-            console.log("shuffle");
             return Object.assign({}, state, {
                 words: _.shuffle(state.words)
             });
