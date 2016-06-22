@@ -26,6 +26,13 @@ const WordsReducer = function(state = initialState, action) {
             return Object.assign({}, state, {
                 words: replaceWord(state.words, newWord, action.word.id)
             });
+        case Actions.TOGGLE_CHECK:
+            var newWord = action.word;
+            newWord.checked = !action.word.checked;
+            console.log("checked")
+            return Object.assign({}, state, {
+                words: replaceWord(state.words, newWord, action.word.id)
+            });
     }
     return state;
 };

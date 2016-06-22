@@ -1,6 +1,8 @@
 import React from 'react';
 import {Row, Col} from 'react-flexgrid';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import Toggle from 'material-ui/Toggle';
+import {lightBlue50} from 'material-ui/styles/colors'
 
 const style = {
     "paddingTop": "0.5rem",
@@ -30,24 +32,32 @@ const Pronunciation = React.createClass({
                     </Col>
                 </Row>
                 <Row>
-                    {getCards(this.props.words, this.props.showAnswerHandler)}
+                    {getCards(this.props.words, this.props.showAnswerHandler, this.props.checkWordHandler)}
                 </Row>
             </div>
         );
     }
 });
 
-function getCards(words, showAnswerHandler) {
+function getCards(words, showAnswerHandler, checkWordHandler) {
 
     return (words.map(word => {
         return (
             <Col key={"col-"+word.id} lg={3} xs={12} sm={12} md={6} style={style}>
-                <Card key={"card-"+word.id} onClick={showAnswerHandler.bind(null, word)}>
-                    <CardHeader key={"card-header-"+word.id}
-                                title={word.word}
-                                subtitle={word.isAnswerShow ? word.pronunciation : " "}
-                                subtitleStyle={word.isAnswerShow ? shownSubtitleStyle : hiddenSubtitleStyle}
-                    />
+                <Card key={"card-"+word.id}
+                      onClick={showAnswerHandler.bind(null, word)}
+                      style={word.checked ? {backgroundColor: lightBlue50} : {} }
+                >
+                    <CardTitle key={"card-header-"+word.id}
+                               title={
+                                        <Toggle label={word.word} toggled={word.checked} onToggle={checkWordHandler.bind(null, word)}/>
+                                    }
+                               titleStyle={{fontSize: "110%", fontWeight: 400}}
+                               subtitle={(word.isAnswerShow || word.checked) ? word.pronunciation : " "}
+                               subtitleStyle={(word.isAnswerShow || word.checked) ? shownSubtitleStyle : hiddenSubtitleStyle}
+                    >
+
+                    </CardTitle>
                 </Card>
             </Col>
         )
