@@ -53,6 +53,7 @@ const Pronunciation = React.createClass({
                             hoverColor="rgba(0,0,0, 0.15)"
                             style={{width: "100%"}}
                             icon={<FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">clear_all</FontIcon>}
+                            onClick={this.props.removeCheckedHandler}
                         />
                     </Col>
                 </Row>

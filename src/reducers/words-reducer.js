@@ -37,6 +37,12 @@ const WordsReducer = function(state = initialState, action) {
             return Object.assign({}, state, {
                 words: _.shuffle(state.words)
             });
+        case Actions.REMOVE_CHECKED:
+            return Object.assign({}, state, {
+                words: _.filter(state.words, function (w) {
+                    return !w.checked;
+                })
+            });
     }
     return state;
 };

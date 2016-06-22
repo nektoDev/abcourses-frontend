@@ -28,11 +28,15 @@ var Header = React.createClass({
                     onLeftIconButtonTouchTap={this.props.handleTouchNavButton.bind(null, null)}
                     iconElementRight={
                     <div className="app-bar-icons">
+
+                        <IconButton tooltip="show all">
+                             <FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">remove_red_eye</FontIcon>
+                        </IconButton>
                         <IconButton tooltip="shuffle" onClick={this.props.shuffleHandler}>
                             <FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">shuffle</FontIcon>
                         </IconButton>
-                        <IconButton tooltip="show all">
-                             <FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">remove_red_eye</FontIcon>
+                        <IconButton tooltip="clear checked" onClick={this.props.removeCheckedHandler}>
+                             <FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">clear_all</FontIcon>
                         </IconButton>
                     </div>
                     }
