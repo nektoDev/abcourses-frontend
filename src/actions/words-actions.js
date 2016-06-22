@@ -1,4 +1,4 @@
-import {GET_WORDS, SHOW_ANSWER, TOGGLE_ANSWER, TOGGLE_CHECK} from "./action-types";
+import {GET_WORDS, SHOW_ANSWER, TOGGLE_ANSWER, TOGGLE_CHECK, SHUFFLE} from "./action-types";
 
 export function getPronunciationSuccessAction(words) {
     return {
@@ -21,9 +21,16 @@ export function toggleAnswerAction(word) {
     }
 }
 
-export function toggleCheckState(word) {
+export function toggleCheckStateAction(word) {
     return {
         type: TOGGLE_CHECK,
         word
     }
 }
+
+export function shuffleAction() {
+    return {
+        type: SHUFFLE
+    }
+}
+

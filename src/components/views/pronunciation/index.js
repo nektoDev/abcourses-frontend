@@ -11,18 +11,17 @@ const style = {
     "paddingBottom": "0.5rem",
     "transition": "all 0.5s linear"
 
-}
-
+};
 const shownSubtitleStyle = {
     opacity: 1,
     visibility: true,
     "transition": "opacity 0.4s linear"
-}
+};
 const hiddenSubtitleStyle = {
     opacity: 0,
     visibility: "hidden",
     "transition": "opacity 0.4s linear"
-}
+};
 
 const Pronunciation = React.createClass({
     render: function () {
@@ -44,6 +43,7 @@ const Pronunciation = React.createClass({
                             backgroundColor="rgba(0,0,0, 0.05)"
                             hoverColor="rgba(0,0,0, 0.15)"
                             icon={<FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">shuffle</FontIcon>}
+                            onClick={this.props.shuffle}
                         />
                     </Col>
                     <Col lg={6} xs={12} sm={6} md={6}>

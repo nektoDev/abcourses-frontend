@@ -7,3 +7,4 @@ export const GET_WORDS = 'GET_WORDS';
 export const SHOW_ANSWER = 'SHOW_ANSWER';
 export const TOGGLE_ANSWER = 'TOGGLE_ANSWER';
 export const TOGGLE_CHECK = 'TOGGLE_CHECK';
+export const SHUFFLE = 'SHUFFLE';

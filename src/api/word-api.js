@@ -19,6 +19,15 @@ export function getWords(task, student) {
             isAnswerShow: false
         });
     }
+    for (var i = 31; i < 40; i++) {
+        words.push({
+            id: i,
+            word: "testiculus",
+            pronunciation: "brainstorming invasion",
+            checked: false,
+            isAnswerShow: false
+        });
+    }
     store.dispatch(getPronunciationSuccessAction(words));
 
     return {
