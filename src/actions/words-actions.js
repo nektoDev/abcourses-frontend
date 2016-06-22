@@ -1,4 +1,4 @@
-import {GET_WORDS, SHOW_ANSWER, TOGGLE_ANSWER, TOGGLE_CHECK, SHUFFLE, REMOVE_CHECKED} from "./action-types";
+import {GET_WORDS, SHOW_ANSWER, TOGGLE_ANSWER, TOGGLE_CHECK, SHUFFLE, REMOVE_CHECKED, TOGGLE_ALL_ANSWERS} from "./action-types";
 
 export function getPronunciationSuccessAction(words) {
     return {
@@ -37,6 +37,12 @@ export function shuffleAction() {
 export function removeCheckedAction() {
     return {
         type: REMOVE_CHECKED
+    }
+}
+
+export function toggleAllAnswersAction() {
+    return {
+        type: TOGGLE_ALL_ANSWERS
     }
 }
 

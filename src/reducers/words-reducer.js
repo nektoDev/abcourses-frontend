@@ -43,6 +43,19 @@ const WordsReducer = function(state = initialState, action) {
                     return !w.checked;
                 })
             });
+        case Actions.TOGGLE_ALL_ANSWERS:
+            console.log();
+            var newWords = [];
+            var show = _.findIndex(state.words, ['isAnswerShow', false]) != -1;
+
+            _.forEach(state.words, function (w) {
+                w.isAnswerShow = show;
+                newWords.push(w);
+            });
+            
+            return Object.assign({}, state, {
+                words: newWords
+            });
     }
     return state;
 };

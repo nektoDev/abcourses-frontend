@@ -29,8 +29,8 @@ var Header = React.createClass({
                     iconElementRight={
                     <div className="app-bar-icons">
 
-                        <IconButton tooltip="show all">
-                             <FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">remove_red_eye</FontIcon>
+                        <IconButton tooltip="show all"onClick={this.props.toggleAllAnswersHandler}>
+                             <FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)" >remove_red_eye</FontIcon>
                         </IconButton>
                         <IconButton tooltip="shuffle" onClick={this.props.shuffleHandler}>
                             <FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">shuffle</FontIcon>
