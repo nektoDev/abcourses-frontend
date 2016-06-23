@@ -37,6 +37,7 @@ var MainLayout = React.createClass({
                     <NavContainer/>
                     <Grid className="content markdown-body" style={this.styles()}>
                         {this.props.children}
+                        <div className="footer"></div>
                     </Grid>
                 </div>
             </MuiThemeProvider>

@@ -39,6 +39,6 @@ body {
     cursor: pointer;
 }
 
-.word-paper {
-    padding: 1rem;
+.words-layout {
+    margin-bottom: 2rem !important;
 }

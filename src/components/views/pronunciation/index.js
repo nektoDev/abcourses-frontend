@@ -26,7 +26,7 @@ const hiddenSubtitleStyle = {
 const Pronunciation = React.createClass({
     render: function () {
         return (
-            <div>
+            <div className="words-layout">
                 <Row fluid="true">
                     <Col sm={12} xs={12} md={12} lg={12}>
                         <h1>Pronunciation {this.props.student}</h1>
