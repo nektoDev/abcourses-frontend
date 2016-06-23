@@ -29,7 +29,7 @@ const WordCard = React.createClass({
                                         onToggle={this.props.checkWordHandler.bind(null, this.props.word)}/>
                                     }
                            titleStyle={{fontSize: "110%", fontWeight: 400}}
-                           subtitle={(this.props.word.isAnswerShow || this.props.word.checked) ? this.props.word.pronunciation : " "}
+                           subtitle={(this.props.word.isAnswerShow || this.props.word.checked) ? this.props.answer : " "}
                            subtitleStyle={(this.props.word.isAnswerShow || this.props.word.checked) ? shownSubtitleStyle : hiddenSubtitleStyle}
                 >
 
