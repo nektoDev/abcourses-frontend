@@ -12,7 +12,7 @@ function shuffleHandler() {
 function removeCheckedHandler() {
     store.dispatch(removeCheckedAction());
 }
-
+     
 const mapStateToProps = function(store) {
     return {
         words: store.wordsStore.words,

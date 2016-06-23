@@ -15,6 +15,7 @@ export function getWords(task, student) {
             id: i,
             word: "accomodation",
             pronunciation: "disintegration",
+            translation: "дедушка купил машину",
             checked: false,
             isAnswerShow: false
         });
@@ -24,6 +25,7 @@ export function getWords(task, student) {
             id: i,
             word: "testiculus",
             pronunciation: "brainstorming invasion",
+            translation: "Легкий",
             checked: false,
             isAnswerShow: false
         });

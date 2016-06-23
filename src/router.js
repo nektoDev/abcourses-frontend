@@ -8,14 +8,15 @@ import WordsLayout from './components/containers/words-layout-container';
 //Components
 import Home from './components/containers/home-container'
 import PronunciationContainer from './components/containers/pronunciation-container'
-import Div from './components/div'
 
 export default (
     <Router history={browserHistory}>
         <Route component={MainLayout}>
             <Route path="/" component={Home}/>
-            <Route path="/vocabulary" component={Div}>
-                <Route path=":student" component={Div}/>
+            <Route path="/vocabulary">
+                <Route component={WordsLayout}>
+                    <Route path=":student" component={PronunciationContainer}/>
+                </Route>
             </Route>
             <Route path="/pronunciation">
                 <Route component={WordsLayout}>

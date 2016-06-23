@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import store from '../../store';
 
 import * as wordsApi from '../../api/word-api';
-import {toggleAnswerAction, toggleCheckStateAction} from '../../actions/words-actions'
+import WordsMixin from '../mixins/word-mixin'
 
 import Pronunciation from '../views/pronunciation/index';
 
-const PronunciationContainer = React.createClass({
-
+var PronunciationContainer = React.createClass({
+    mixins: [WordsMixin],
+    
     componentDidMount: function() {
         wordsApi.getWords(wordsApi.TASK_TYPE.PRONUNCIATION, this.props.params.student);
     },
@@ -16,19 +16,11 @@ const PronunciationContainer = React.createClass({
 
     render: function() {
         return <Pronunciation words={this.props.words}
-                              showAnswerHandler={showAnswer}
-                              checkWordHandler={checkWordHandler}
+                              showAnswerHandler={this.showAnswer}
+                              checkWordHandler={this.checkWordHandler}
         />;
     }
 });
-
-function checkWordHandler(word) {
-    store.dispatch(toggleCheckStateAction(word))
-}
-
-function showAnswer(word) {
-    store.dispatch(toggleAnswerAction(word));
-}
 
 const mapStateToProps = function(store) {
     return {
