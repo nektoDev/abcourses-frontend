@@ -8,6 +8,7 @@ import WordsLayout from './components/containers/words-layout-container';
 //Components
 import Home from './components/containers/home-container'
 import PronunciationContainer from './components/containers/pronunciation-container'
+import VocabularyContainer from './components/containers/vocabulary-container'
 
 export default (
     <Router history={browserHistory}>
@@ -15,7 +16,7 @@ export default (
             <Route path="/" component={Home}/>
             <Route path="/vocabulary">
                 <Route component={WordsLayout}>
-                    <Route path=":student" component={PronunciationContainer}/>
+                    <Route path=":student" component={VocabularyContainer}/>
                 </Route>
             </Route>
             <Route path="/pronunciation">

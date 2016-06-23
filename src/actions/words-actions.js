@@ -1,6 +1,6 @@
 import {GET_WORDS, SHOW_ANSWER, TOGGLE_ANSWER, TOGGLE_CHECK, SHUFFLE, REMOVE_CHECKED, TOGGLE_ALL_ANSWERS} from "./action-types";
 
-export function getPronunciationSuccessAction(words) {
+export function getWordsSuccessAction(words) {
     return {
         type: GET_WORDS,
         words

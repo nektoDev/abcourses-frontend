@@ -1,8 +1,7 @@
 import {GET_WORDS, SHOW_ANSWER} from '../actions/action-types';
 import store from '../store';
-import { getPronunciationSuccessAction, showAnswerAction } from '../actions/words-actions';
+import { getWordsSuccessAction, showAnswerAction } from '../actions/words-actions';
 
-var words = []
 
 export const TASK_TYPE = {
     PRONUNCIATION: 0,
@@ -10,27 +9,53 @@ export const TASK_TYPE = {
 };
 
 export function getWords(task, student) {
-    for (var i = 0; i < 30; i++) {
-        words.push({
-            id: i,
-            word: "accomodation",
-            pronunciation: "disintegration",
-            translation: "дедушка купил машину",
-            checked: false,
-            isAnswerShow: false
-        });
+    var words = [];
+
+    if (task == TASK_TYPE.PRONUNCIATION) {
+        for (var i = 0; i < 30; i++) {
+            words.push({
+                id: i,
+                word: "accomodation",
+                pronunciation: "disintegration",
+                translation: "дедушка купил машину",
+                checked: false,
+                isAnswerShow: false
+            });
+        }
+        for (var i = 31; i < 40; i++) {
+            words.push({
+                id: i,
+                word: "testiculus",
+                pronunciation: "brainstorming invasion",
+                translation: "Легкий",
+                checked: false,
+                isAnswerShow: false
+            });
+        }
+    } else {
+        for (var i = 100; i < 130; i++) {
+            words.push({
+                id: i,
+                word: "accomodation",
+                pronunciation: "disintegration",
+                translation: "дедушка купил машину",
+                checked: false,
+                isAnswerShow: false
+            });
+        }
+        for (var i = 131; i < 140; i++) {
+            words.push({
+                id: i,
+                word: "testiculus",
+                pronunciation: "brainstorming invasion",
+                translation: "Легкий",
+                checked: false,
+                isAnswerShow: false
+            });
+        }
     }
-    for (var i = 31; i < 40; i++) {
-        words.push({
-            id: i,
-            word: "testiculus",
-            pronunciation: "brainstorming invasion",
-            translation: "Легкий",
-            checked: false,
-            isAnswerShow: false
-        });
-    }
-    store.dispatch(getPronunciationSuccessAction(words));
+
+    store.dispatch(getWordsSuccessAction(words));
 
     return {
         type: GET_WORDS,
