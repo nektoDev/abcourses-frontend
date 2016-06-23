@@ -3,6 +3,7 @@ import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 
 //Layouts
 import MainLayout from './components/layouts/main-layout';
+import WordsLayout from './components/containers/words-layout-container';
 
 //Components
 import Home from './components/containers/home-container'
@@ -16,7 +17,10 @@ export default (
             <Route path="/vocabulary" component={Div}>
                 <Route path=":student" component={Div}/>
             </Route>
-            <Route path="/pronunciation/:student" component={PronunciationContainer}>
+            <Route path="/pronunciation">
+                <Route component={WordsLayout}>
+                    <Route path=":student" component={PronunciationContainer}/>
+                </Route>
             </Route>
         </Route>
     </Router>

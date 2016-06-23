@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import store from '../../store';
 
 import * as wordsApi from '../../api/word-api';
-import {toggleAnswerAction, toggleCheckStateAction, shuffleAction, removeCheckedAction} from '../../actions/words-actions'
+import {toggleAnswerAction, toggleCheckStateAction} from '../../actions/words-actions'
 
 import Pronunciation from '../views/pronunciation/index';
 
@@ -16,11 +16,8 @@ const PronunciationContainer = React.createClass({
 
     render: function() {
         return <Pronunciation words={this.props.words}
-                              student={this.props.params.student}
                               showAnswerHandler={showAnswer}
                               checkWordHandler={checkWordHandler}
-                              shuffle={shuffleHandler}
-                              removeCheckedHandler={removeCheckedHandler}
         />;
     }
 });
@@ -31,14 +28,6 @@ function checkWordHandler(word) {
 
 function showAnswer(word) {
     store.dispatch(toggleAnswerAction(word));
-}
-
-function shuffleHandler() {
-    store.dispatch(shuffleAction());
-}
-
-function removeCheckedHandler() {
-    store.dispatch(removeCheckedAction());
 }
 
 const mapStateToProps = function(store) {

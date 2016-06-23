@@ -1,10 +1,10 @@
 import React from 'react';
-import {Row, Col} from 'react-flexgrid';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import Toggle from 'material-ui/Toggle';
+import {Row, Col} from 'react-flexgrid';
 import FlatButton from 'material-ui/FlatButton';
-import {lightBlue50} from 'material-ui/styles/colors'
 import FontIcon from 'material-ui/FontIcon';
+import {lightBlue50} from 'material-ui/styles/colors'
 
 const style = {
     "paddingTop": "0.5rem",
@@ -26,38 +26,8 @@ const hiddenSubtitleStyle = {
 const Pronunciation = React.createClass({
     render: function () {
         return (
-            <div className="words-layout">
-                <Row fluid="true">
-                    <Col sm={12} xs={12} md={12} lg={12}>
-                        <h1>Pronunciation {this.props.student}</h1>
-                    </Col>
-                </Row>
-                <Row>
-                    {getCards(this.props.words, this.props.showAnswerHandler, this.props.checkWordHandler)}
-                </Row>
-                <Row>
-                    <Col lg={6} xs={12} sm={6} md={6}>
-                        <FlatButton
-                            label="Retry"
-                            style={{width: "100%"}}
-                            backgroundColor="rgba(0,0,0, 0.05)"
-                            hoverColor="rgba(0,0,0, 0.15)"
-                            icon={<FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">shuffle</FontIcon>}
-                            onClick={this.props.shuffle}
-                        />
-                    </Col>
-                    <Col lg={6} xs={12} sm={6} md={6}>
-                        <FlatButton
-                            label="Remove checked"
-                            backgroundColor="rgba(0,0,0, 0.05)"
-                            hoverColor="rgba(0,0,0, 0.15)"
-                            style={{width: "100%"}}
-                            icon={<FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">clear_all</FontIcon>}
-                            onClick={this.props.removeCheckedHandler}
-                        />
-                    </Col>
-                </Row>
-            </div>
+            <Row>
+                {getCards(this.props.words, this.props.showAnswerHandler, this.props.checkWordHandler)}</Row>
         );
     }
 });
