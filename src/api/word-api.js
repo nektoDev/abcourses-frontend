@@ -12,7 +12,6 @@ export function getWords(task, student) {
     axios.get('http://localhost:8080/word/' + task + '/' + student)
         .then(response => {
             var words = response.data;
-            console.log(words);
             store.dispatch(getWordsSuccessAction(words, task, student));
 
             return {
