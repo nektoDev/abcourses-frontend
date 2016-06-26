@@ -9,7 +9,7 @@ export default function (props) {
         <div className="words-layout">
             <Row fluid="true">
                 <Col sm={12} xs={12} md={12} lg={12}>
-                    <h1>Pronunciation {props.params.student}</h1>
+                    <h1>{props.title}</h1>
                 </Col>
             </Row>
             {props.children}
@@ -21,7 +21,7 @@ export default function (props) {
                         backgroundColor="rgba(0,0,0, 0.05)"
                         hoverColor="rgba(0,0,0, 0.15)"
                         icon={<FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">shuffle</FontIcon>}
-                        onClick={props.shuffle}
+                        onClick={props.retryHandler.bind(this, props.taskType, props.student)}
                     />
                 </Col>
                 <Col lg={6} xs={12} sm={6} md={6}>

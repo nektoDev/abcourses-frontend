@@ -8,14 +8,24 @@ import Vocabulary from '../views/vocabulary/index';
 
 var VocabularyContainer = React.createClass({
     mixins: [WordsMixin],
-    
-    componentDidMount: function() {
+
+    loadWords: function () {
         wordsApi.getWords(wordsApi.TASK_TYPE.VOCABULARY, this.props.params.student);
     },
+    
+    componentDidMount: function() {
+        this.loadWords();
+    },
 
+    componentDidUpdate: function(prevProps) {
+        let oldId = prevProps.params.student;
+        let newId = this.props.params.student;
+        if (newId !== oldId)
+            this.loadWords();
+    },
 
     render: function() {
-        return <Vocabulary words={this.props.words}
+        return <Vocabulary words={this.props.words} 
                            showAnswerHandler={this.showAnswer}
                            checkWordHandler={this.checkWordHandler}
         />;
