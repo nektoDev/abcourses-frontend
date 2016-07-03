@@ -10,7 +10,6 @@ var VocabularyContainer = React.createClass({
     mixins: [WordsMixin],
 
     loadWords: function () {
-        console.log(this.props.student);
         if (this.props.student.id)
             wordsApi.getWords(wordsApi.TASK_TYPE.VOCABULARY, this.props.student.id);
     },

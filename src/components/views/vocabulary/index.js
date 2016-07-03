@@ -18,10 +18,8 @@ const Vocabulary = React.createClass({
             || this.props.words.length == 0) {
             return null;
         }
-        console.log(this.props.words)
         return (
             <Row>
-
                 {getCards(this.props.words, this.props.showAnswerHandler, this.props.checkWordHandler)}
             </Row>
         );
@@ -34,7 +32,7 @@ function getCards(words, showAnswerHandler, checkWordHandler) {
         return (
             <Col key={"col-"+word.id} lg={3} xs={12} sm={12} md={6} style={style}>
                 <WordCard word={word}
-                          answer={word.translation}
+                          answer={word.translation.join()}
                           showAnswerHandler={showAnswerHandler}
                           checkWordHandler={checkWordHandler}/>
             </Col>

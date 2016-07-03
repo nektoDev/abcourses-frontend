@@ -46,7 +46,6 @@ const WordsReducer = function(state = initialState, action) {
                 })
             });
         case Actions.TOGGLE_ALL_ANSWERS:
-            console.log();
             var newWords = [];
             var show = _.findIndex(state.words, ['isAnswerShow', false]) != -1;
 

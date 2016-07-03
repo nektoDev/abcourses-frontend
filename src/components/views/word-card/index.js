@@ -27,23 +27,14 @@ const WordCard = React.createClass({
             >
                 <CardTitle key={"card-header-"+this.props.word.id}
                            title={
-                                        <Toggle label={this.props.word.word} toggled={this.props.word.checked}
+                                        <Toggle label={this.props.word.id} toggled={this.props.word.checked}
                                         onToggle={this.props.checkWordHandler.bind(null, this.props.word)}/>
                                     }
                            titleStyle={{fontSize: "110%", fontWeight: 400}}
-                           subtitle={(<div>
-                                {(this.props.word.isAnswerShow || this.props.word.checked) ? this.props.answer : " "}
-                                <IconButton tooltip="shuffle" >
-                                    <FontIcon className="material-icons" style={shownSubtitleStyle}>shuffle</FontIcon>
-                                 </IconButton>
-                                 </div>
-                           )}
+                           subtitle={(this.props.word.isAnswerShow || this.props.word.checked) ? this.props.answer : " "}
                            subtitleStyle={(this.props.word.isAnswerShow || this.props.word.checked) ? shownSubtitleStyle : hiddenSubtitleStyle}
                 >
                 </CardTitle>
-                <CardText expandable={true}>
-                    {this.props.answer}
-                </CardText>
             </Card>
         );
     }
