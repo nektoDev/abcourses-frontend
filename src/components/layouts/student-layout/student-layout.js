@@ -4,7 +4,6 @@ import StudentHome from '../../views/student-home/index';
 import {Link} from 'react-router';
 
 export default function (props) {
-    console.log(props.children);
     return (
         <div className="student-layout">
             <Row fluid="true">
