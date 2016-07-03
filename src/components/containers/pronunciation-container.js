@@ -10,7 +10,8 @@ var PronunciationContainer = React.createClass({
     mixins: [WordsMixin],
 
     loadWords: function () {
-        wordsApi.getWords(wordsApi.TASK_TYPE.PRONUNCIATION, this.props.params.student);
+        if (this.props.student.id)
+            wordsApi.getWords(wordsApi.TASK_TYPE.PRONUNCIATION, this.props.student.id);
     },
 
     componentDidMount: function() {
@@ -18,8 +19,8 @@ var PronunciationContainer = React.createClass({
     },
 
     componentDidUpdate: function(prevProps) {
-        let oldId = prevProps.params.student;
-        let newId = this.props.params.student;
+        let oldId = prevProps.student.id;
+        let newId = this.props.student.id;
         if (newId !== oldId)
             this.loadWords();
     },
@@ -28,13 +29,15 @@ var PronunciationContainer = React.createClass({
         return <Pronunciation words={this.props.words}
                               showAnswerHandler={this.showAnswer}
                               checkWordHandler={this.checkWordHandler}
+                              student={this.props.student}
         />;
     }
 });
 
 const mapStateToProps = function(store) {
     return {
-        words: store.wordsStore.words
+        words: store.wordsStore.words,
+        student: store.studentStore.student
     };
 };
 
