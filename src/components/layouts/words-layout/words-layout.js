@@ -7,11 +7,6 @@ import FontIcon from 'material-ui/FontIcon';
 export default function (props) {
     return (
         <div className="words-layout">
-            <Row fluid="true">
-                <Col sm={12} xs={12} md={12} lg={12}>
-                    <h1>{props.title}</h1>
-                </Col>
-            </Row>
             {props.children}
             <Row>
                 <Col lg={6} xs={12} sm={6} md={6}>
