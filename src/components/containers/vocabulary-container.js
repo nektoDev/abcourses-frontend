@@ -10,7 +10,9 @@ var VocabularyContainer = React.createClass({
     mixins: [WordsMixin],
 
     loadWords: function () {
-        wordsApi.getWords(wordsApi.TASK_TYPE.VOCABULARY, this.props.params.student);
+        console.log(this.props.student);
+        if (this.props.student.id)
+            wordsApi.getWords(wordsApi.TASK_TYPE.VOCABULARY, this.props.student.id);
     },
     
     componentDidMount: function() {
@@ -18,8 +20,8 @@ var VocabularyContainer = React.createClass({
     },
 
     componentDidUpdate: function(prevProps) {
-        let oldId = prevProps.params.student;
-        let newId = this.props.params.student;
+        let oldId = prevProps.student.id;
+        let newId = this.props.student.id;
         if (newId !== oldId)
             this.loadWords();
     },
@@ -34,7 +36,8 @@ var VocabularyContainer = React.createClass({
 
 const mapStateToProps = function(store) {
     return {
-        words: store.wordsStore.words
+        words: store.wordsStore.words,
+        student: store.studentStore.student
     };
 };
 

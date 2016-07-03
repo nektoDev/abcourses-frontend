@@ -13,8 +13,15 @@ const style = {
 
 const Vocabulary = React.createClass({
     render: function () {
+
+        if (typeof this.props.words === 'undefined'
+            || this.props.words.length == 0) {
+            return null;
+        }
+        console.log(this.props.words)
         return (
             <Row>
+
                 {getCards(this.props.words, this.props.showAnswerHandler, this.props.checkWordHandler)}
             </Row>
         );

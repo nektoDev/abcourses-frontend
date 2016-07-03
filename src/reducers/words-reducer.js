@@ -3,15 +3,13 @@ import _ from 'lodash';
 
 const initialState = {
     words: [],
-    student: '',
     taskType: null
 };
 const WordsReducer = function(state = initialState, action) {
     switch(action.type) {
         case Actions.GET_WORDS:
             return Object.assign({}, state, {
-                words: action.words,
-                student: action.student,
+                words: action.homework.words,
                 taskType: action.task
             });
 

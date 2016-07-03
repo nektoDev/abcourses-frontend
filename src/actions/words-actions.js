@@ -1,11 +1,10 @@
 import {GET_WORDS, SHOW_ANSWER, TOGGLE_ANSWER, TOGGLE_CHECK, SHUFFLE, REMOVE_CHECKED, TOGGLE_ALL_ANSWERS} from "./action-types";
 
-export function getWordsSuccessAction(words, task, student) {
+export function getWordsSuccessAction(homework, task, student) {
     return {
         type: GET_WORDS,
-        words,
-        task, 
-        student
+        homework,
+        task
     }
 }
 

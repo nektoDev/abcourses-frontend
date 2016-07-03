@@ -7,7 +7,7 @@ import {  removeCheckedAction, shuffleAction } from '../../actions/words-actions
 import { getWords, TASK_TYPE } from '../../api/word-api';
 
 function retryHandler(taskType, student) {
-    getWords(taskType, student);
+    getWords(taskType, student.id);
     store.dispatch(shuffleAction());
 }
 
@@ -19,8 +19,7 @@ const mapStateToProps = function(store) {
     return {
         words: store.wordsStore.words,
         taskType: store.wordsStore.taskType,
-        student: store.wordsStore.student,
-        title: (store.wordsStore.taskType == TASK_TYPE.PRONUNCIATION ? "Pronunciation " : "Vocabulary ") + store.wordsStore.student,
+        student: store.studentStore.student,
         retryHandler: retryHandler,
         removeCheckedHandler: removeCheckedHandler,
     };

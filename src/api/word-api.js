@@ -9,16 +9,15 @@ export const TASK_TYPE = {
 };
 
 export function getWords(task, student) {
-    axios.get('http://localhost:8080/word/' + task + '/' + student)
+    axios.get('http://localhost:8080/word/homework/' + task + '/' + student)
         .then(response => {
-            var words = response.data;
-            store.dispatch(getWordsSuccessAction(words, task, student));
+            var homework = response.data;
+            store.dispatch(getWordsSuccessAction(homework, task));
 
             return {
                 type: GET_WORDS,
-                words,
-                task,
-                student
+                homework,
+                task
             };
         });
 }
