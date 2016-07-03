@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {Row, Col} from 'react-flexgrid';
+import StudentHome from '../../views/student-home/index';
+
 
 export default function (props) {
-    console.log(props.student);
+    console.log(props.children);
     return (
         <div className="student-layout">
             <Row fluid="true">
@@ -10,7 +12,7 @@ export default function (props) {
                     <h1>{props.student.name}</h1>
                 </Col>
             </Row>
-            {props.children}
+            {props.children || <StudentHome {...props}/>}
         </div>
     );
 }
