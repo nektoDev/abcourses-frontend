@@ -3,6 +3,8 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 import Toggle from 'material-ui/Toggle';
 import {lightBlue50} from 'material-ui/styles/colors';
 import {Row, Col} from 'react-flexgrid';
+import IconButton from 'material-ui/IconButton';
+import FontIcon from 'material-ui/FontIcon';
 
 
 const shownSubtitleStyle = {
@@ -29,14 +31,30 @@ const WordCard = React.createClass({
                                         onToggle={this.props.checkWordHandler.bind(null, this.props.word)}/>
                                     }
                            titleStyle={{fontSize: "110%", fontWeight: 400}}
-                           subtitle={(this.props.word.isAnswerShow || this.props.word.checked) ? this.props.answer : " "}
+                           subtitle={(<div>
+                                {(this.props.word.isAnswerShow || this.props.word.checked) ? this.props.answer : " "}
+                                <IconButton tooltip="shuffle" >
+                                    <FontIcon className="material-icons" style={shownSubtitleStyle}>shuffle</FontIcon>
+                                 </IconButton>
+                                 </div>
+                           )}
                            subtitleStyle={(this.props.word.isAnswerShow || this.props.word.checked) ? shownSubtitleStyle : hiddenSubtitleStyle}
                 >
-
                 </CardTitle>
+                <CardText expandable={true}>
+                    {this.props.answer}
+                </CardText>
             </Card>
         );
     }
 });
+
+function getExpandableButton() {
+    return (
+        <IconButton tooltip="shuffle" style={shownSubtitleStyle}>
+            <FontIcon className="material-icons">shuffle</FontIcon>
+        </IconButton>
+    );
+}
 
 export default WordCard;

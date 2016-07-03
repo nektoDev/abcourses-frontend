@@ -2,18 +2,18 @@ import * as Actions from '../actions/action-types'
 var div = {
     id: 1,
     title: "Slava&Daria",
-    url: "/div",
+    url: "/slava",
     pages: [
         {
             id: 11,
-            url: "/vocabulary/div",
+            url: "/slava/vocabulary",
             title: "Vocabulary",
             subtitle: "Try to remember all the words",
             picture: "http://lorempixel.com/600/400/nature/1"
         },
         {
             id: 12,
-            url: "/pronunciation/slava",
+            url: "/slava/pronunciation",
             title: "Slava's Pronunciation",
             subtitle: "Good luck!",
             picture: "http://lorempixel.com/600/400/nature/2"
@@ -34,21 +34,21 @@ var aiy = {
     pages: [
         {
             id: 21,
-            url: "/vocabulary/aiy",
+            url: "/aydar/vocabulary",
             title: "Vocabulary",
             subtitle: "Try to remember all the words",
             picture: "http://lorempixel.com/600/400/nature/4"
         },
         {
             id: 22,
-            url: "/pronunciation/aydar",
+            url: "/aydar/pronunciation",
             title: "Aydar's Pronunciation",
             subtitle: "Good luck!",
             picture: "http://lorempixel.com/600/400/nature/5"
         },
         {
             id: 23,
-            url: "/pronunciation/yulia",
+            url: "/yulia/pronunciation",
             title: "Yulia's Pronunciation",
             subtitle: "Good luck!",
             picture: "http://lorempixel.com/600/400/nature/6"

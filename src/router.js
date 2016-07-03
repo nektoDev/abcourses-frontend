@@ -14,14 +14,13 @@ export default (
     <Router history={browserHistory}>
         <Route component={MainLayout}>
             <Route path="/" component={Home}/>
-            <Route path="/vocabulary">
+            <Route path="/test" component={Home}/>
+
+            <Route path="/:student">
                 <Route component={WordsLayout}>
-                    <Route path=":student" component={VocabularyContainer}/>
-                </Route>
-            </Route>
-            <Route path="/pronunciation">
-                <Route component={WordsLayout}>
-                    <Route path=":student" component={PronunciationContainer}/>
+                    <Route path="/" component={Home}/>
+                    <Route path="/:student/vocabulary" component={VocabularyContainer}/>
+                    <Route path="/:student/pronunciation" component={PronunciationContainer}/>
                 </Route>
             </Route>
         </Route>
