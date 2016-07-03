@@ -46,3 +46,11 @@ body {
 .red {
     background-color: red;
 }
+
+.link-not-link {
+    color: inherit !important;
+}
+.link-not-link:hover {
+    color: inherit !important;
+    text-decoration: none !important;
+}
