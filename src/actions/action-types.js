@@ -10,3 +10,5 @@ export const TOGGLE_CHECK = 'TOGGLE_CHECK';
 export const SHUFFLE = 'SHUFFLE';
 export const REMOVE_CHECKED = 'REMOVE_CHECKED';
 export const TOGGLE_ALL_ANSWERS = 'TOGGLE_ALL_ANSWERS';
+
+export const GET_STUDENT = 'GET_STUDENT';
