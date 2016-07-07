@@ -30,6 +30,7 @@ function handleTouchNavButton() {
 const mapStateToProps = function(store) {
     return {
         showAppBar: store.navState.showAppBar,
+        student: store.studentStore.student,
         words: store.wordsStore.words
     };
 };
