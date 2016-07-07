@@ -58,6 +58,7 @@ var aiy = {
 
 const initialState = {
     showNav: false,
+    showAppBar: false,
     navigation: [
         div,
         aiy
@@ -77,6 +78,14 @@ const NavReducer = function(state = initialState, action) {
         case Actions.SHOW_NAV:
             return Object.assign({}, state, {
                 showNav: true
+            });
+        case Actions.SHOW_APPBAR: 
+            return Object.assign({}, state, {
+                showAppBar: true
+            });
+        case Actions.HIDE_APPBAR:
+            return Object.assign({}, state, {
+                showAppBar: false
             });
         case Actions.GET_NAVIGATION:
             return Object.assign({}, state, {

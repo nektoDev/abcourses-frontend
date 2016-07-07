@@ -1,8 +1,6 @@
 import React from 'react';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import WordCard from '../word-card';
 import {Row, Col} from 'react-flexgrid';
-import {lightBlue50} from 'material-ui/styles/colors'
 
 const style = {
     "paddingTop": "0.5rem",

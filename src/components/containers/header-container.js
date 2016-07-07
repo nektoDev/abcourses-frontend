@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import store from '../../store';
 
 //Actions
@@ -17,6 +18,7 @@ const HeaderContainer = React.createClass({
                        shuffleHandler={this.shuffleHandler}
                        removeCheckedHandler={this.removeCheckedHandler}
                        toggleAllAnswersHandler={this.toggleAllAnswersHandler}
+                       {...this.props}
         />;
     }
 });
@@ -25,4 +27,10 @@ function handleTouchNavButton() {
     store.dispatch({type: TOGGLE_NAV});
 }
 
-export default HeaderContainer;
+const mapStateToProps = function(store) {
+    return {
+        showAppBar: store.navState.showAppBar
+    };
+};
+
+export default connect(mapStateToProps)(HeaderContainer);

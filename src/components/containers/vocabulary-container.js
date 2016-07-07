@@ -1,8 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { HIDE_APPBAR, SHOW_APPBAR} from '../../actions/action-types';
+import store from '../../store';
+
 import * as wordsApi from '../../api/word-api';
-import WordsMixin from '../mixins/word-mixin'
+import WordsMixin from '../mixins/word-mixin';
 
 import Vocabulary from '../views/vocabulary/index';
 
@@ -16,6 +19,7 @@ var VocabularyContainer = React.createClass({
     
     componentDidMount: function() {
         this.loadWords();
+        store.dispatch({type: SHOW_APPBAR});
     },
 
     componentDidUpdate: function(prevProps) {
@@ -30,6 +34,10 @@ var VocabularyContainer = React.createClass({
                            showAnswerHandler={this.showAnswer}
                            checkWordHandler={this.checkWordHandler}
         />;
+    },
+
+    componentWillUnmount: function() {
+        store.dispatch({type: HIDE_APPBAR});
     }
 });
 
