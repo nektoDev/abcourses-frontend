@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { HIDE_APPBAR, SHOW_APPBAR} from '../../actions/action-types';
+import store from '../../store';
+
 import * as wordsApi from '../../api/word-api';
 import WordsMixin from '../mixins/word-mixin'
 
@@ -16,6 +19,7 @@ var PronunciationContainer = React.createClass({
 
     componentDidMount: function() {
         this.loadWords();
+        store.dispatch({type: SHOW_APPBAR});
     },
 
     componentDidUpdate: function(prevProps) {
@@ -31,6 +35,10 @@ var PronunciationContainer = React.createClass({
                               checkWordHandler={this.checkWordHandler}
                               student={this.props.student}
         />;
+    },
+    
+    componentWillUnmount: function() {
+        store.dispatch({type: HIDE_APPBAR});
     }
 });
 

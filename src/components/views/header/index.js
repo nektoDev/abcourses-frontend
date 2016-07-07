@@ -8,6 +8,9 @@ const styles = {
     title: {
         cursor: 'pointer',
     },
+    hidden: {
+        display: 'none'
+    }
 };
 
 var Header = React.createClass({
@@ -27,8 +30,7 @@ var Header = React.createClass({
                     onTitleTouchTap={this.handleTitleClick}
                     onLeftIconButtonTouchTap={this.props.handleTouchNavButton.bind(null, null)}
                     iconElementRight={
-                    <div className="app-bar-icons">
-
+                    <div className="app-bar-icons" style={this.props.showAppBar ? null : styles.hidden}>
                         <IconButton tooltip="show all"onClick={this.props.toggleAllAnswersHandler}>
                              <FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)" >remove_red_eye</FontIcon>
                         </IconButton>
