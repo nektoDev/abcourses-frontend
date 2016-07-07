@@ -8,7 +8,7 @@ export const TASK_TYPE = {
     VOCABULARY: "vocabulary"
 };
 
-export function getWords(task, student) {
+export function getHomework(task, student) {
     axios.get('http://localhost:8080/word/homework/' + task + '/' + student)
         .then(response => {
             var homework = response.data;

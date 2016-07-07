@@ -11,7 +11,7 @@ var PronunciationContainer = React.createClass({
 
     loadWords: function () {
         if (this.props.student.id)
-            wordsApi.getWords(wordsApi.TASK_TYPE.PRONUNCIATION, this.props.student.id);
+            wordsApi.getHomework(wordsApi.TASK_TYPE.PRONUNCIATION, this.props.student.id);
     },
 
     componentDidMount: function() {

@@ -4,10 +4,10 @@ import store from '../../store';
 
 import WordsLayout from '../layouts/words-layout/words-layout';
 import {  removeCheckedAction, shuffleAction } from '../../actions/words-actions';
-import { getWords, TASK_TYPE } from '../../api/word-api';
+import { getHomework, TASK_TYPE } from '../../api/word-api';
 
 function retryHandler(taskType, student) {
-    getWords(taskType, student.id);
+    getHomework(taskType, student.id);
     store.dispatch(shuffleAction());
 }
 

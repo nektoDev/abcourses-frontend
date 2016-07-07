@@ -11,7 +11,7 @@ var VocabularyContainer = React.createClass({
 
     loadWords: function () {
         if (this.props.student.id)
-            wordsApi.getWords(wordsApi.TASK_TYPE.VOCABULARY, this.props.student.id);
+            wordsApi.getHomework(wordsApi.TASK_TYPE.VOCABULARY, this.props.student.id);
     },
     
     componentDidMount: function() {
