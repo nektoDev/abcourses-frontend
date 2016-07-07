@@ -12,6 +12,12 @@ export function getHomework(task, student) {
     axios.get('http://localhost:8080/word/homework/' + task + '/' + student)
         .then(response => {
             var homework = response.data;
+
+            homework.words.map(function (w) {
+                w.checked=false;
+                w.showAnswer=false;
+            });
+
             store.dispatch(getWordsSuccessAction(homework, task));
 
             return {
