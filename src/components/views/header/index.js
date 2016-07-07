@@ -10,6 +10,11 @@ const styles = {
     },
     hidden: {
         display: 'none'
+    },
+    wordsCount: {
+        fontSize: 18,
+        verticalAlign: "text-top",
+        padding: 12
     }
 };
 
@@ -31,6 +36,9 @@ var Header = React.createClass({
                     onLeftIconButtonTouchTap={this.props.handleTouchNavButton.bind(null, null)}
                     iconElementRight={
                     <div className="app-bar-icons" style={this.props.showAppBar ? null : styles.hidden}>
+                        <FontIcon color="rgba(255, 255, 255, 0.870588)" >
+                            <span style={styles.wordsCount}>{this.props.words.filter(function(w){return w.checked==false}).length}</span>
+                        </FontIcon>
                         <IconButton tooltip="show all"onClick={this.props.toggleAllAnswersHandler}>
                              <FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)" >remove_red_eye</FontIcon>
                         </IconButton>
@@ -40,6 +48,7 @@ var Header = React.createClass({
                         <IconButton tooltip="clear checked" onClick={this.props.removeCheckedHandler}>
                              <FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">clear_all</FontIcon>
                         </IconButton>
+
                     </div>
                     }
                 />
