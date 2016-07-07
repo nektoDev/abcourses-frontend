@@ -14,7 +14,7 @@ export default function (props) {
                         style={{width: "100%"}}
                         backgroundColor="rgba(0,0,0, 0.05)"
                         hoverColor="rgba(0,0,0, 0.15)"
-                        icon={<FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">shuffle</FontIcon>}
+                        icon={<FontIcon className="material-icons" color="rgba(255, 255, 255)">shuffle</FontIcon>}
                         onClick={props.retryHandler.bind(this, props.taskType, props.student)}
                     />
                 </Col>
@@ -24,7 +24,7 @@ export default function (props) {
                         backgroundColor="rgba(0,0,0, 0.05)"
                         hoverColor="rgba(0,0,0, 0.15)"
                         style={{width: "100%"}}
-                        icon={<FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">clear_all</FontIcon>}
+                        icon={<FontIcon className="material-icons" color="rgba(255, 255, 255)">clear_all</FontIcon>}
                         onClick={props.removeCheckedHandler}
                     />
                 </Col>
