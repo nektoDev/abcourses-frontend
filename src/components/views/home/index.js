@@ -58,8 +58,8 @@ const Home = React.createClass({
                     <Col lg={3}>
                         <h2>Useful links</h2>
                             <Menu>
-                                <MenuItem primaryText="Oxford dictionary" valueLink="https://www.oxfordlearnersdictionaries.com/"/>
-                                <MenuItem primaryText="Forvo" valueLink="http://ru.forvo.com/" />
+                                <MenuItem primaryText="Oxford dictionary" containerElement={<a href="https://www.oxfordlearnersdictionaries.com/"/>}/>
+                                <MenuItem primaryText="Forvo" containerElement={<a href="http://ru.forvo.com/"/>}/>
                             </Menu>
                     </Col>
 
