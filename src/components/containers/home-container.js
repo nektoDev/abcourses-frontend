@@ -6,7 +6,7 @@ import store from '../../store'
 import { HIDE_NAV } from '../../actions/action-types'
 
 //View
-import Home from '../views/home';
+import Home from '../views/home/index';
 
 const HomeContainer = React.createClass({
 

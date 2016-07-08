@@ -6,7 +6,7 @@ import store from '../../store';
 import {HIDE_NAV} from '../../actions/action-types';
 
 //View
-import Nav from '../views/nav/';
+import Nav from '../views/Nav/index';
 
 const NavContainer = React.createClass({
 

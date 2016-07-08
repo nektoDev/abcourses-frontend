@@ -27,7 +27,7 @@ const WordCard = React.createClass({
             >
                 <CardTitle key={"card-header-"+this.props.word.id}
                            title={
-                                        <Toggle label={this.props.word.id} toggled={this.props.word.checked}
+                                        <Toggle label={this.props.question} toggled={this.props.word.checked}
                                         onToggle={this.props.checkWordHandler.bind(null, this.props.word)}/>
                                     }
                            titleStyle={{fontSize: "110%", fontWeight: 400}}

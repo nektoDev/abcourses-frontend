@@ -6,7 +6,7 @@ import store from '../../store';
 import { TOGGLE_NAV, SHUFFLE } from '../../actions/action-types'
 
 //View
-import Header from '../views/header';
+import Header from '../views/Header/index.js';
 
 import WordsMixin from '../mixins/word-mixin'
 

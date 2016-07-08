@@ -8,8 +8,8 @@ import router from './router';
 
 //CSS
 require('./components/layouts/main-layout/main-layout.css');
-require('./components/views/Header/header.css');
-require('./components/views/nav/nav.css');
+require('./components/views/Header/Header.css');
+require('./components/views/Nav/Nav.css');
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
