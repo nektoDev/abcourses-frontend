@@ -31,7 +31,7 @@ var Header = React.createClass({
                     ref="navBar"
                     zDepth={2}
                     className="app-bar"
-                    title={<span style={styles.title}>Homework</span>}
+                    title={<span style={styles.title}>{this.props.student ? this.props.student.name : 'English'}</span>}
                     onTitleTouchTap={this.handleTitleClick}
                     onLeftIconButtonTouchTap={this.props.handleTouchNavButton.bind(null, null)}
                     iconElementRight={

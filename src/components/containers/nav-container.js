@@ -11,12 +11,13 @@ import Nav from '../views/nav/';
 const NavContainer = React.createClass({
 
     render: function() {
-        return <Nav showNav={this.props.showNav} navigation={this.props.navigation} docked={!this.props.isMobile}/>;
+        return <Nav {...this.props} showNav={this.props.showNav} navigation={this.props.navigation} docked={!this.props.isMobile}/>;
     }
 });
 
 const mapStateToProps = function(store) {
     return {
+        student: store.studentStore.student,
         showNav: store.navState.showNav,
         isMobile: store.browser.lessThan.medium,
         navigation: store.navState.navigation
