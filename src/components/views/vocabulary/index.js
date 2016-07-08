@@ -29,8 +29,8 @@ function getCards(words, showAnswerHandler, checkWordHandler) {
     return (words.map(word => {
         return (
             <Col key={"col-"+word.id} lg={3} xs={12} sm={12} md={6} style={style}>
-                <WordCard word={word}
-                          answer={word.translation.join(", ")}
+                <WordCard word={word.translation.join(", ")}
+                          answer={word}
                           showAnswerHandler={showAnswerHandler}
                           checkWordHandler={checkWordHandler}/>
             </Col>
