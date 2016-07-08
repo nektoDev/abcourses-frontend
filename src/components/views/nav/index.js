@@ -7,6 +7,11 @@ import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
 import Divider from 'material-ui/Divider';
 
+const styles = {
+    hidden: {
+        display: "none",
+    }
+};
 
 const Nav = React.createClass({
     render: function () {
@@ -18,7 +23,10 @@ const Nav = React.createClass({
         return (
             <Drawer open={this.props.showNav} docked={this.props.docked}>
                 <div className="left-nav">
-                    {getNavigation(this.props.navigation)}
+                    {getStudentLinks(this.props.student)}
+                    <Subheader inset={false}>Useful Links</Subheader>
+                    <MenuItem primaryText="Oxford dictionary" containerElement={<a href="https://www.oxfordlearnersdictionaries.com/"/>}/>
+                    <MenuItem primaryText="Forvo" containerElement={<a href="http://ru.forvo.com/"/>}/>
                 </div>
 
                 <Subheader className="footer">
@@ -33,28 +41,15 @@ const Nav = React.createClass({
     }
 });
 
-function getNavigation(navigation) {
-    return (
-        navigation.map(sub => {
-            return (
-                <div key={"div-"+sub.id}>
-                    <Subheader key={sub.id} inset={false}>{sub.title}</Subheader>
-                    {getMenuItems(sub)}
-                </div>
-            )
-        })
+function getStudentLinks(student) {
+    return ( Object.keys(student).length === 0 ? null :
+        <div>
+            <Subheader inset={false}>{student.name}</Subheader>
+            <MenuItem containerElement={<Link to={"/"+student.id+"/vocabulary"}/>}>Vocabulary</MenuItem>
+            <MenuItem containerElement={<Link to={"/"+student.id+"/pronunciation"}/>}>Pronunciation</MenuItem>
+        </div>
     )
-}
 
-function getMenuItems(sub) {
-    return (
-        sub.pages.map(page => {
-            return (
-                <MenuItem key={page.id}
-                          containerElement={<Link to={page.url}/>}>{page.title}</MenuItem>
-            )
-        })
-    )
 }
 
 export default Nav;

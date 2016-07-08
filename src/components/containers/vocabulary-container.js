@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { HIDE_APPBAR, SHOW_APPBAR} from '../../actions/action-types';
+import { HIDE_APPBAR, SHOW_APPBAR, CLEAR_WORDS} from '../../actions/action-types';
 import store from '../../store';
 
 import * as wordsApi from '../../api/word-api';
@@ -37,6 +37,7 @@ var VocabularyContainer = React.createClass({
     },
 
     componentWillUnmount: function() {
+        store.dispatch({type: CLEAR_WORDS});
         store.dispatch({type: HIDE_APPBAR});
     }
 });

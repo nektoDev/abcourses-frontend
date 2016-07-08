@@ -12,7 +12,10 @@ const WordsReducer = function(state = initialState, action) {
                 words: action.homework.words,
                 taskType: action.task
             });
-
+        case Actions.CLEAR_WORDS:
+            return Object.assign({}, state, {
+                words: []
+            });
         case Actions.SHOW_ANSWER:
             var newWord = action.word;
             newWord.isAnswerShow = true;

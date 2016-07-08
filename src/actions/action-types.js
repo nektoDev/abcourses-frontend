@@ -6,6 +6,7 @@ export const SHOW_APPBAR = 'SHOW_APPBAR';
 export const HIDE_APPBAR = 'HIDE_APPBAR';
 
 export const GET_WORDS = 'GET_WORDS';
+export const CLEAR_WORDS = 'CLEAR_WORDS';
 export const SHOW_ANSWER = 'SHOW_ANSWER';
 export const TOGGLE_ANSWER = 'TOGGLE_ANSWER';
 export const TOGGLE_CHECK = 'TOGGLE_CHECK';
