@@ -4,9 +4,8 @@ var config = require('./webpack.config');
 
 new WebpackDevServer(webpack(config), {
     publicPath: "http://" + '0.0.0.0' + ":" + 3000 + config.output.publicPath,
-    hot: true,
     historyApiFallback: true
-}).listen(3001, '0.0.0.0', function (err, result) {
+}).listen(3000, '0.0.0.0', function (err, result) {
     if (err) {
         return console.log(err);
     }

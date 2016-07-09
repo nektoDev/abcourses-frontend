@@ -24,9 +24,9 @@ const Home = React.createClass({
                                 </Link>
                             </Col>
                             <Col lg={6}>
-                                <Link to="/daria/">
+                                <Link to="/dasha/">
                                     <Card className="card" zDepth={2}>
-                                        <CardMedia overlay={<CardTitle title="Daria"/>}>
+                                        <CardMedia overlay={<CardTitle title="Dasha"/>}>
                                             <img src="http://lorempixel.com/600/400/nature/?2"/>
                                         </CardMedia>
                                     </Card>
