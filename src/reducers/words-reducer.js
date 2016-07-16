@@ -38,7 +38,7 @@ const WordsReducer = function(state = initialState, action) {
             var show = _.findIndex(state.words, ['checked', false]) != -1;
 
             _.forEach(state.words, function (w) {
-                w.isAnswerShow = show;
+                w.checked = show;
                 newWords.push(w);
             });
             
