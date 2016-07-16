@@ -31,7 +31,9 @@ var VocabularyContainer = React.createClass({
 
     render: function() {
         return <Vocabulary words={this.props.words}
-                           showAnswerHandler={this.showAnswer}
+                           student={this.props.student}
+                           showAnswerHandler={this.showAnswerHandler}
+                           toggleAnswerHandler={this.toggleAnswerHandler}
         />;
     },
 

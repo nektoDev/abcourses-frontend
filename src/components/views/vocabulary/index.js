@@ -18,13 +18,13 @@ const Vocabulary = React.createClass({
         }
         return (
             <Row>
-                {getCards(this.props.words, this.props.showAnswerHandler, this.props.checkWordHandler)}
+                {getCards(this.props.words, this.props.student, this.props.toggleAnswerHandler)}
             </Row>
         );
     }
 });
 
-function getCards(words, showAnswerHandler) {
+function getCards(words, student, toggleAnswerHandler) {
 
     return (words.map(word => {
         return (
@@ -32,7 +32,8 @@ function getCards(words, showAnswerHandler) {
                 <WordCard word={word}
                           question={word.question}
                           answer={word.answer}
-                          showAnswerHandler={showAnswerHandler}
+                          toggleAnswerHandler={toggleAnswerHandler}
+                          student={student}
                 />
             </Col>
         )

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import WordCard from '../word-card';
+import WordCard from '../word-card/index';
 import {Row, Col} from 'react-flexgrid';
 import {lightBlue50} from 'material-ui/styles/colors'
 
@@ -20,13 +20,13 @@ const Pronunciation = React.createClass({
         }
         return (
             <Row>
-                {getCards(this.props.words, this.props.student.dialect, this.props.showAnswerHandler, this.props.checkWordHandler)}
+                {getCards(this.props.words, this.props.student, this.props.toggleAnswerHandler)}
             </Row>
         );
     }
 });
 
-function getCards(words, dialect, showAnswerHandler) {
+function getCards(words, student, toggleAnswerHandler) {
 
     return (words.map(word => {
         return (
@@ -34,7 +34,8 @@ function getCards(words, dialect, showAnswerHandler) {
                 <WordCard word={word}
                           question={word.question}
                           answer={word.answer}
-                          showAnswerHandler={showAnswerHandler}
+                          toggleAnswerHandler={toggleAnswerHandler}
+                          student={student}
                 />
             </Col>
         )

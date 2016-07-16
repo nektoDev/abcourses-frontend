@@ -9,40 +9,59 @@ import FontIcon from 'material-ui/FontIcon';
 
 const shownAnswerStyle = {
     opacity: 1,
-    visibility: true,
+    fontSize: "100%",
     "transition": "opacity 0.4s linear"
 };
 const hiddenAnswerStyle = {
     opacity: 0,
-    visibility: "hidden",
+    fontSize: "100%",
     "transition": "opacity 0.4s linear"
 };
 
 const WordCard = React.createClass({
     render: function () {
+
         return (
             <Card key={"card-"+this.props.word.id}
-                  onClick={this.props.showAnswerHandler.bind(null, this.props.word)}
                   style={this.props.word.checked ? {backgroundColor: lightBlue50} : {} }
             >
                 <CardTitle key={"card-header-"+this.props.word.id}
-                           title={this.props.answer}
+                           title={<div onClick={this.props.toggleAnswerHandler.bind(null, this.props.word)}>{this.props.answer}</div>}
+                           showExpandableButton={true}
                            titleStyle={this.props.word.checked ? shownAnswerStyle : hiddenAnswerStyle}
-                           subtitle={this.props.question}
-                           subtitleStyle={{fontSize:"110%"}}
+                           subtitle={<div onClick={this.props.toggleAnswerHandler.bind(null, this.props.word)}>{this.props.question}</div>}
+                           subtitleStyle={{fontSize:"100%"}}
                 >
                 </CardTitle>
+                <CardText expandable={true}>
+                    {this.props.word.word.pronunciation ? "/" + this.props.word.word.pronunciation[this.props.student.dialect] + "/" : ""}
+                    {getTranslations(this.props.word.word.translation)}
+                </CardText>
             </Card>
         );
     }
 });
 
-function getExpandableButton() {
+function getTranslations(translations) {
+    if (typeof translations === 'undefined'
+        || translations == 0 || translations == null) {
+        return null;
+    }
+
     return (
-        <IconButton tooltip="shuffle" style={shownAnswerStyle}>
-            <FontIcon className="material-icons">shuffle</FontIcon>
-        </IconButton>
-    );
+        <div>
+            <h5>
+                Translations:
+            </h5>
+            <ul>
+                {translations.map(t => {
+                    return (
+                        <li>{t}</li>
+                    );
+                })}
+            </ul>
+        </div>
+    )
 }
 
 export default WordCard;

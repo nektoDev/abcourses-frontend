@@ -9,7 +9,7 @@ export const TASK_TYPE = {
 };
 
 export function getHomework(task, student) {
-    axios.get('http://newenglish.nektodev.ru:8085/word/homework/' + task + '/' + student)
+    axios.get('http://localhost:8080/api/word/homework/' + task + '/' + student)
         .then(response => {
             var homework = response.data;
             homework.words.map(function (w) {
