@@ -14,7 +14,6 @@ export function getHomework(task, student) {
             var homework = response.data;
             homework.words.map(function (w) {
                 w.checked=false;
-                w.showAnswer=false;
             });
 
             store.dispatch(getWordsSuccessAction(homework, task));

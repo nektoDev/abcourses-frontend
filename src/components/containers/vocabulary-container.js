@@ -33,7 +33,6 @@ var VocabularyContainer = React.createClass({
         console.log(this.props.words);
         return <Vocabulary words={this.props.words} 
                            showAnswerHandler={this.showAnswer}
-                           checkWordHandler={this.checkWordHandler}
         />;
     },
 

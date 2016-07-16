@@ -32,7 +32,6 @@ var PronunciationContainer = React.createClass({
     render: function() {
         return <Pronunciation words={this.props.words}
                               showAnswerHandler={this.showAnswer}
-                              checkWordHandler={this.checkWordHandler}
                               student={this.props.student}
         />;
     },

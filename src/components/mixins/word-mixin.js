@@ -1,14 +1,10 @@
 import store from '../../store';
-import {toggleAnswerAction, toggleCheckStateAction, shuffleAction, removeCheckedAction, toggleAllAnswersAction} from '../../actions/words-actions'
+import {toggleCheckStateAction, shuffleAction, removeCheckedAction, toggleAllAnswersAction} from '../../actions/words-actions'
 
 var WordMixin = {
 
-    checkWordHandler: function (word) {
-        store.dispatch(toggleCheckStateAction(word))
-    },
-
     showAnswer: function (word) {
-        store.dispatch(toggleAnswerAction(word));
+        store.dispatch(toggleCheckStateAction(word));
     },
 
 

@@ -24,7 +24,7 @@ const Vocabulary = React.createClass({
     }
 });
 
-function getCards(words, showAnswerHandler, checkWordHandler) {
+function getCards(words, showAnswerHandler) {
 
     return (words.map(word => {
         return (
@@ -33,7 +33,7 @@ function getCards(words, showAnswerHandler, checkWordHandler) {
                           question={word.question}
                           answer={word.answer}
                           showAnswerHandler={showAnswerHandler}
-                          checkWordHandler={checkWordHandler}/>
+                />
             </Col>
         )
     }))

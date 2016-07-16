@@ -16,21 +16,6 @@ const WordsReducer = function(state = initialState, action) {
             return Object.assign({}, state, {
                 words: []
             });
-        case Actions.SHOW_ANSWER:
-            var newWord = action.word;
-            newWord.isAnswerShow = true;
-
-            return Object.assign({}, state, {
-                words: replaceWord(state.words, newWord, action.word.wordId)
-            });
-
-        case Actions.TOGGLE_ANSWER:
-            var newWord = action.word;
-            newWord.isAnswerShow = !action.word.isAnswerShow;
-
-            return Object.assign({}, state, {
-                words: replaceWord(state.words, newWord, action.word.wordId)
-            });
         case Actions.TOGGLE_CHECK:
             var newWord = action.word;
             newWord.checked = !action.word.checked;
@@ -50,7 +35,7 @@ const WordsReducer = function(state = initialState, action) {
             });
         case Actions.TOGGLE_ALL_ANSWERS:
             var newWords = [];
-            var show = _.findIndex(state.words, ['isAnswerShow', false]) != -1;
+            var show = _.findIndex(state.words, ['checked', false]) != -1;
 
             _.forEach(state.words, function (w) {
                 w.isAnswerShow = show;

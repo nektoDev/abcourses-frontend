@@ -26,7 +26,7 @@ const Pronunciation = React.createClass({
     }
 });
 
-function getCards(words, dialect, showAnswerHandler, checkWordHandler) {
+function getCards(words, dialect, showAnswerHandler) {
 
     return (words.map(word => {
         return (
@@ -35,7 +35,7 @@ function getCards(words, dialect, showAnswerHandler, checkWordHandler) {
                           question={word.question}
                           answer={word.answer}
                           showAnswerHandler={showAnswerHandler}
-                          checkWordHandler={checkWordHandler}/>
+                />
             </Col>
         )
     }))

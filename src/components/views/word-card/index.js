@@ -7,12 +7,12 @@ import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
 
 
-const shownSubtitleStyle = {
+const shownAnswerStyle = {
     opacity: 1,
     visibility: true,
     "transition": "opacity 0.4s linear"
 };
-const hiddenSubtitleStyle = {
+const hiddenAnswerStyle = {
     opacity: 0,
     visibility: "hidden",
     "transition": "opacity 0.4s linear"
@@ -26,13 +26,10 @@ const WordCard = React.createClass({
                   style={this.props.word.checked ? {backgroundColor: lightBlue50} : {} }
             >
                 <CardTitle key={"card-header-"+this.props.word.id}
-                           title={
-                                        <Toggle label={this.props.question} toggled={this.props.word.checked}
-                                        onToggle={this.props.checkWordHandler.bind(null, this.props.word)}/>
-                                    }
-                           titleStyle={{fontSize: "110%", fontWeight: 400}}
-                           subtitle={(this.props.word.isAnswerShow || this.props.word.checked) ? this.props.answer : " "}
-                           subtitleStyle={(this.props.word.isAnswerShow || this.props.word.checked) ? shownSubtitleStyle : hiddenSubtitleStyle}
+                           title={this.props.answer}
+                           titleStyle={this.props.word.checked ? shownAnswerStyle : hiddenAnswerStyle}
+                           subtitle={this.props.question}
+                           subtitleStyle={{fontSize:"110%"}}
                 >
                 </CardTitle>
             </Card>
@@ -42,7 +39,7 @@ const WordCard = React.createClass({
 
 function getExpandableButton() {
     return (
-        <IconButton tooltip="shuffle" style={shownSubtitleStyle}>
+        <IconButton tooltip="shuffle" style={shownAnswerStyle}>
             <FontIcon className="material-icons">shuffle</FontIcon>
         </IconButton>
     );
