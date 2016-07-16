@@ -21,7 +21,7 @@ const WordsReducer = function(state = initialState, action) {
             newWord.isAnswerShow = true;
 
             return Object.assign({}, state, {
-                words: replaceWord(state.words, newWord, action.word.id)
+                words: replaceWord(state.words, newWord, action.word.wordId)
             });
 
         case Actions.TOGGLE_ANSWER:
@@ -29,14 +29,14 @@ const WordsReducer = function(state = initialState, action) {
             newWord.isAnswerShow = !action.word.isAnswerShow;
 
             return Object.assign({}, state, {
-                words: replaceWord(state.words, newWord, action.word.id)
+                words: replaceWord(state.words, newWord, action.word.wordId)
             });
         case Actions.TOGGLE_CHECK:
             var newWord = action.word;
             newWord.checked = !action.word.checked;
 
             return Object.assign({}, state, {
-                words: replaceWord(state.words, newWord, action.word.id)
+                words: replaceWord(state.words, newWord, action.word.wordId)
             });
         case Actions.SHUFFLE:
             return Object.assign({}, state, {
@@ -68,7 +68,7 @@ function replaceWord(words, newWord, id) {
     var newWords = words.slice();
 
     let index = _.findIndex(newWords, function(w) {
-        return w.id === id;
+        return w.wordId === id;
     });
 
     newWords[index] = newWord;

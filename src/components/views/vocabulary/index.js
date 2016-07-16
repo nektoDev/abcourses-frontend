@@ -1,5 +1,5 @@
 import React from 'react';
-import WordCard from '../word-card';
+import WordCard from '../word-card/index';
 import {Row, Col} from 'react-flexgrid';
 
 const style = {
@@ -28,10 +28,10 @@ function getCards(words, showAnswerHandler, checkWordHandler) {
 
     return (words.map(word => {
         return (
-            <Col key={"col-"+word.id} lg={3} xs={12} sm={12} md={6} style={style}>
+            <Col key={"col-"+word.wordId} lg={3} xs={12} sm={12} md={6} style={style}>
                 <WordCard word={word}
-                          question={word.translation.join(", ")}
-                          answer={word.id}
+                          question={word.question}
+                          answer={word.answer}
                           showAnswerHandler={showAnswerHandler}
                           checkWordHandler={checkWordHandler}/>
             </Col>
