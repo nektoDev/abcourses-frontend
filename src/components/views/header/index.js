@@ -39,13 +39,13 @@ var Header = React.createClass({
                         <FontIcon color="rgba(255, 255, 255, 0.870588)" >
                             <span style={styles.wordsCount}>{this.props.words.filter(function(w){return w.checked==false}).length}</span>
                         </FontIcon>
-                        <IconButton tooltip="show all"onClick={this.props.toggleAllAnswersHandler}>
+                        <IconButton onClick={this.props.toggleAllAnswersHandler}>
                              <FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)" >remove_red_eye</FontIcon>
                         </IconButton>
-                        <IconButton tooltip="shuffle" onClick={this.props.shuffleHandler}>
+                        <IconButton onClick={this.props.shuffleHandler}>
                             <FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">shuffle</FontIcon>
                         </IconButton>
-                        <IconButton tooltip="clear checked" onClick={this.props.removeCheckedHandler}>
+                        <IconButton onClick={this.props.removeCheckedHandler}>
                              <FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">clear_all</FontIcon>
                         </IconButton>
 
