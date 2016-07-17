@@ -34,7 +34,7 @@ const WordCard = React.createClass({
                 >
                 </CardTitle>
                 <CardText expandable={true}>
-                    {this.props.word.word.pronunciation ? "/" + this.props.word.word.pronunciation[this.props.student.dialect] + "/" : ""}
+                    {this.props.word.word.pronunciation && this.props.word.word.pronunciation[this.props.student.dialect]? "/" + this.props.word.word.pronunciation[this.props.student.dialect] + "/" : ""}
                     {getTranslations(this.props.word.word.translation)}
                 </CardText>
             </Card>
