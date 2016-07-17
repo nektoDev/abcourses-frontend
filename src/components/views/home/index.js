@@ -65,6 +65,15 @@ const Home = React.createClass({
                             <Menu>
                                 <MenuItem primaryText="Oxford dictionary" containerElement={<a href="https://www.oxfordlearnersdictionaries.com/"/>}/>
                                 <MenuItem primaryText="Forvo" containerElement={<a href="http://ru.forvo.com/"/>}/>
+                                <MenuItem primaryText="Academic translate" containerElement={<a href="http://translate.academic.ru/"/>}/>
+                                <MenuItem primaryText="Merriam-Webster dictionary" containerElement={<a href="http://www.merriam-webster.com/"/>}/>
+                                <MenuItem primaryText="MacMillan dictionary" containerElement={<a href="http://www.macmillandictionary.com/"/>}/>
+                                <MenuItem primaryText="Collins dictionary" containerElement={<a href="http://www.collinsdictionary.com/"/>}/>
+                                <MenuItem primaryText="Cambridge dictionary" containerElement={<a href="http://dictionary.cambridge.org/"/>}/>
+                                <MenuItem primaryText="The Free Dictionary dictionary" containerElement={<a href="http://www.thefreedictionary.com/"/>}/>
+                                <MenuItem primaryText="Wordreference" containerElement={<a href="http://www.wordreference.com/"/>}/>
+                                <MenuItem primaryText="Wiktionary" containerElement={<a href="https://en.wiktionary.org/wiki/Wiktionary:Main_Page"/>}/>
+                                <MenuItem primaryText="Multitran" containerElement={<a href="http://www.multitran.ru/"/>}/>
                             </Menu>
                     </Col>
 
