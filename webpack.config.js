@@ -39,8 +39,9 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader")
-            }
-
+            },
+            { test: /\.jpg$/, loader: 'file' },
+            { test: /\.png$/, loader: 'file' },
         ]
     }
 };

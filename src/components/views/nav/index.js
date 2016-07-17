@@ -47,6 +47,7 @@ function getStudentLinks(student) {
             <Subheader inset={false}>{student.name}</Subheader>
             <MenuItem containerElement={<Link to={"/"+student.id+"/vocabulary"}/>}>Vocabulary</MenuItem>
             <MenuItem containerElement={<Link to={"/"+student.id+"/pronunciation"}/>}>Pronunciation</MenuItem>
+            <MenuItem containerElement={<Link to={"/"+student.id+"/progress"}/>}>Progress</MenuItem>
         </div>
     )
 

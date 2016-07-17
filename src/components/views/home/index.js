@@ -4,6 +4,11 @@ import {Grid, Row, Col} from 'react-flexgrid';
 import {Link} from 'react-router';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
+import aydar from '../../../img/aydar.jpg';
+import dasha from '../../../img/dasha.jpg';
+import slava from '../../../img/slava.jpg';
+import yuliya from '../../../img/yuliya.jpg';
+
 import Divider from 'material-ui/Divider';
 
 const Home = React.createClass({
@@ -18,7 +23,7 @@ const Home = React.createClass({
                                 <Link to="/slava/">
                                     <Card className="card" zDepth={2}>
                                         <CardMedia overlay={<CardTitle title="Slava"/>}>
-                                            <img src="http://lorempixel.com/600/400/nature/?1"/>
+                                            <img src={slava}/>
                                         </CardMedia>
                                     </Card>
                                 </Link>
@@ -27,7 +32,7 @@ const Home = React.createClass({
                                 <Link to="/dasha/">
                                     <Card className="card" zDepth={2}>
                                         <CardMedia overlay={<CardTitle title="Dasha"/>}>
-                                            <img src="http://lorempixel.com/600/400/nature/?2"/>
+                                            <img src={dasha}/>
                                         </CardMedia>
                                     </Card>
                                 </Link>
@@ -39,7 +44,7 @@ const Home = React.createClass({
                                 <Link to="/aydar/">
                                     <Card className="card" zDepth={2}>
                                         <CardMedia overlay={<CardTitle title="Aydar"/>}>
-                                            <img src="http://lorempixel.com/600/400/nature/?3"/>
+                                            <img src={aydar}/>
                                         </CardMedia>
                                     </Card>
                                 </Link>
@@ -48,7 +53,7 @@ const Home = React.createClass({
                                 <Link to="/yuliya/">
                                     <Card className="card" zDepth={2}>
                                         <CardMedia overlay={<CardTitle title="Yuliya"/>}>
-                                            <img src="http://lorempixel.com/600/400/nature/?4"/>
+                                            <img src={yuliya}/>
                                         </CardMedia>
                                     </Card>
                                 </Link>
