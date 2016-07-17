@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import store from '../../store';
 
 import { getProgress } from '../../api/progress-api';
+import { getStudent } from '../../api/student-api';
 import Progress from '../views/progress/progress';
 
 const ProgressContainer = React.createClass({

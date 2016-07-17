@@ -12,24 +12,23 @@ const Progress = React.createClass({
         return (
             <div>
                 <Row>
-                    <Col lg={10} sm={12} md={10}>
+                    <Col lg={12} sm={12} md={12}>
                         <LineChart
                             data={this.props.progress}
                             width='100%'
                             height={400}
                             legend={true}
-                            viewBoxObject={{x: 0,y: 0,width: 800,height: 400}}
+                            colors={d3.scale.category10()}
+                            viewBoxObject={{x: 0,y: 0,width: 1500,height: 400}}
                             title="Progress"
                             yAxisLabel="Progress"
                             xAxisLabel="Date"
                             xAccessor={(d)=> {return new Date(d.x);}}
-                            domain={{x: [,], y: [0,100]}}
+                            domain={{x: [,], y: [,100]}}
                             gridHorizontal={true}
+                            xAxisTickInterval={{unit: 'week', interval: 3}}
+
                         />
-                        TEST
-                    </Col>
-                    <Col lg={2} sm={12} md={2}>
-                        TEST
                     </Col>
                 </Row>
             </div>

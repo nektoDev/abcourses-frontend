@@ -1,7 +1,9 @@
 import store from '../store';
 import axios from 'axios';
 import {getProgressSuccessAction} from '../actions/progress-actions';
+import {getStudent} from './student-api';
 
+/*
 let progress = [{
         name: "slava",
         values: [
@@ -31,17 +33,27 @@ let progress = [{
             }
         ]
     }]
+*/
 
-export function getProgress(student) {
-    progress[0].values = _.sortBy(progress[0].values, function(o) { console.log(o.x); return o.x; });
-    let progressAction = getProgressSuccessAction(progress);
-    store.dispatch(progressAction);
-    return progressAction;
-    //
-    // axios.get('http://localhost:8080/api/student/' + studentId)
-    //     .then(response => {
-    //         var studentAction = getStudentSuccessAction(response.data);
-    //         store.dispatch(studentAction);
-    //         return studentAction;
-    //     });
+export function getProgress(studentId) {
+    axios.get('http://localhost:8080/api/student/' + studentId)
+        .then(response => {
+            axios.get('http://localhost:8080/api/progress/' + response.data.progressName)
+                .then(response => {
+                    let progress = [];
+                    response.data.data.map( d => {
+                        let values = [];
+                        d.values.map(v => {
+                            values.push({x: v.date, y: v.value})
+                        });
+                        progress.push({name: d.name, values: values});
+                    });
+                    progress.map(m => m.values = _.sortBy(m.values, function(o) { return o.x; }));
+                    var action = getProgressSuccessAction(progress);
+                    store.dispatch(action);
+                    return action;
+
+                });
+        });
+    
 }
