@@ -23,8 +23,8 @@ export default (
                     <Route component={WordsLayout}>
                         <Route path="/:student/vocabulary" component={VocabularyContainer}/>
                         <Route path="/:student/pronunciation" component={PronunciationContainer}/>
-                        <Route path="/:student/progress" component={ProgressContainer}/>
                     </Route>
+                    <Route path="/:student/progress" component={ProgressContainer}/>
                 </Route>
             </Route>
         </Route>
