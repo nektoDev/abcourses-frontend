@@ -14,7 +14,7 @@ export default function (props) {
                         style={{width: "100%"}}
                         backgroundColor="rgba(0,0,0, 0.05)"
                         hoverColor="rgba(0,0,0, 0.15)"
-                        icon={<FontIcon className="material-icons" color="rgba(255, 255, 255)">shuffle</FontIcon>}
+                        icon={<FontIcon className="material-icons" color="rgba(255, 255, 255)">refresh</FontIcon>}
                         onClick={props.retryHandler.bind(this, props.taskType, props.student)}
                     />
                 </Col>
