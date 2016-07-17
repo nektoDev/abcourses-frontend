@@ -14,3 +14,5 @@ export const REMOVE_CHECKED = 'REMOVE_CHECKED';
 export const TOGGLE_ALL_ANSWERS = 'TOGGLE_ALL_ANSWERS';
 
 export const GET_STUDENT = 'GET_STUDENT';
+
+export const GET_PROGRESS = 'GET_PROGRESS';

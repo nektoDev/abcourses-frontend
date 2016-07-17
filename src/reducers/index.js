@@ -5,13 +5,15 @@ import {responsiveStateReducer} from 'redux-responsive'
 import NavReducer from './nav-reducer';
 import WordsReducer from './words-reducer';
 import StudentReducer from './student-reducer';
+import ProgressReducer from './progress-reducer';
 
 // Combine Reducers
 var reducers = combineReducers({
         navState: NavReducer,
         browser: responsiveStateReducer,
         wordsStore: WordsReducer,
-        studentStore: StudentReducer
+        studentStore: StudentReducer,
+        progressStore: ProgressReducer,
     });
 
 export default reducers;
