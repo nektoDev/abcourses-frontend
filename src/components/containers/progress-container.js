@@ -53,7 +53,7 @@ function getProgressDataRows(progress) {
         }
     });
     result = _.sortBy(result, function (o) {
-        return o.date;
+        return -o.date;
     })
 
     return result;
