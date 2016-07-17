@@ -10,6 +10,7 @@ import WordsLayout from './components/containers/words-layout-container';
 import Home from './components/containers/home-container'
 import PronunciationContainer from './components/containers/pronunciation-container'
 import VocabularyContainer from './components/containers/vocabulary-container'
+import ProgressContainer from './components/containers/progress-container'
 import StudentHome from './components/views/student-home/index';
 
 export default (
@@ -22,6 +23,7 @@ export default (
                     <Route component={WordsLayout}>
                         <Route path="/:student/vocabulary" component={VocabularyContainer}/>
                         <Route path="/:student/pronunciation" component={PronunciationContainer}/>
+                        <Route path="/:student/progress" component={ProgressContainer}/>
                     </Route>
                 </Route>
             </Route>
