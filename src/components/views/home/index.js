@@ -63,17 +63,17 @@ const Home = React.createClass({
                     <Col lg={3}>
                         <h2>Useful links</h2>
                             <Menu>
-                                <MenuItem primaryText="Oxford dictionary" containerElement={<a href="https://www.oxfordlearnersdictionaries.com/"/>}/>
-                                <MenuItem primaryText="Forvo" containerElement={<a href="http://ru.forvo.com/"/>}/>
-                                <MenuItem primaryText="Academic translate" containerElement={<a href="http://translate.academic.ru/"/>}/>
-                                <MenuItem primaryText="Merriam-Webster dictionary" containerElement={<a href="http://www.merriam-webster.com/"/>}/>
-                                <MenuItem primaryText="MacMillan dictionary" containerElement={<a href="http://www.macmillandictionary.com/"/>}/>
-                                <MenuItem primaryText="Collins dictionary" containerElement={<a href="http://www.collinsdictionary.com/"/>}/>
-                                <MenuItem primaryText="Cambridge dictionary" containerElement={<a href="http://dictionary.cambridge.org/"/>}/>
-                                <MenuItem primaryText="The Free Dictionary dictionary" containerElement={<a href="http://www.thefreedictionary.com/"/>}/>
-                                <MenuItem primaryText="Wordreference" containerElement={<a href="http://www.wordreference.com/"/>}/>
-                                <MenuItem primaryText="Wiktionary" containerElement={<a href="https://en.wiktionary.org/wiki/Wiktionary:Main_Page"/>}/>
-                                <MenuItem primaryText="Multitran" containerElement={<a href="http://www.multitran.ru/"/>}/>
+                                <a target="_blank"  href="https://www.oxfordlearnersdictionaries.com/"><MenuItem primaryText="Oxford dictionary"/></a>
+                                <a target="_blank"  href="http://ru.forvo.com/"><MenuItem primaryText="Forvo" /></a>
+                                <a target="_blank"  href="http://translate.academic.ru/"><MenuItem primaryText="Academic translate"/></a>
+                                <a target="_blank"  href="http://www.merriam-webster.com/"><MenuItem primaryText="Merriam-Webster dictionary" /></a>
+                                <a target="_blank"  href="http://www.macmillandictionary.com/"><MenuItem primaryText="MacMillan dictionary" /></a>
+                                <a target="_blank"  href="http://www.collinsdictionary.com/"><MenuItem primaryText="Collins dictionary" /></a>
+                                <a target="_blank"  href="http://dictionary.cambridge.org/"><MenuItem primaryText="Cambridge dictionary" /></a>
+                                <a target="_blank"  href="http://www.thefreedictionary.com/"><MenuItem primaryText="The Free Dictionary dictionary" /></a>
+                                <a target="_blank"  href="http://www.wordreference.com/"><MenuItem primaryText="Wordreference" /></a>
+                                <a target="_blank"  href="https://en.wiktionary.org/wiki/Wiktionary:Main_Page"><MenuItem primaryText="Wiktionary" /></a>
+                                <a target="_blank"  href="http://www.multitran.ru/"><MenuItem primaryText="Multitran" /></a>
                             </Menu>
                     </Col>
 

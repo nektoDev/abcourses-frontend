@@ -4,7 +4,7 @@ import {getStudentSuccessAction} from '../actions/student-actions';
 import {getProgressSuccessAction} from '../actions/progress-actions';
 
 export function getStudent(studentId) {
-    axios.get('http://localhost:8080/api/student/' + studentId)
+    axios.get('http://newenglish.nektodev.ru:8085/api/student/' + studentId)
         .then(response => {
             var studentAction = getStudentSuccessAction(response.data);
             store.dispatch(studentAction);
@@ -13,7 +13,7 @@ export function getStudent(studentId) {
 }
 
 export function getProgress(studentId) {
-    axios.get('http://localhost:8080/api/student/progress/' + studentId)
+    axios.get('http://newenglish.nektodev.ru:8085/api/student/progress/' + studentId)
         .then(response => {
             let progress = [];
             response.data.map(d => {

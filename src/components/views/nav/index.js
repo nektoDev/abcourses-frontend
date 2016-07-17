@@ -25,8 +25,17 @@ const Nav = React.createClass({
                 <div className="left-nav">
                     {getStudentLinks(this.props.student)}
                     <Subheader inset={false}>Useful Links</Subheader>
-                    <MenuItem primaryText="Oxford dictionary" containerElement={<a href="https://www.oxfordlearnersdictionaries.com/"/>}/>
-                    <MenuItem primaryText="Forvo" containerElement={<a href="http://ru.forvo.com/"/>}/>
+                    <a target="_blank" className="link-not-link" href="https://www.oxfordlearnersdictionaries.com/"><MenuItem primaryText="Oxford dictionary"/></a>
+                    <a target="_blank" className="link-not-link" href="http://ru.forvo.com/"><MenuItem primaryText="Forvo" /></a>
+                    <a target="_blank" className="link-not-link" href="http://translate.academic.ru/"><MenuItem primaryText="Academic translate"/></a>
+                    <a target="_blank" className="link-not-link" href="http://www.merriam-webster.com/"><MenuItem primaryText="Merriam-Webster dictionary" /></a>
+                    <a target="_blank" className="link-not-link" href="http://www.macmillandictionary.com/"><MenuItem primaryText="MacMillan dictionary" /></a>
+                    <a target="_blank" className="link-not-link" href="http://www.collinsdictionary.com/"><MenuItem primaryText="Collins dictionary" /></a>
+                    <a target="_blank" className="link-not-link" href="http://dictionary.cambridge.org/"><MenuItem primaryText="Cambridge dictionary" /></a>
+                    <a target="_blank" className="link-not-link" href="http://www.thefreedictionary.com/"><MenuItem primaryText="The Free Dictionary dictionary" /></a>
+                    <a target="_blank" className="link-not-link" href="http://www.wordreference.com/"><MenuItem primaryText="Wordreference" /></a>
+                    <a target="_blank" className="link-not-link" href="https://en.wiktionary.org/wiki/Wiktionary:Main_Page"><MenuItem primaryText="Wiktionary" /></a>
+                    <a target="_blank" className="link-not-link" href="http://www.multitran.ru/"><MenuItem primaryText="Multitran" /></a>
                 </div>
 
                 <Subheader className="footer">
