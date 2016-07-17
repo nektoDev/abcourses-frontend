@@ -35,25 +35,3 @@ let progress = [{
     }]
 */
 
-export function getProgress(studentId) {
-    axios.get('http://localhost:8080/api/student/' + studentId)
-        .then(response => {
-            axios.get('http://localhost:8080/api/progress/' + response.data.progressName)
-                .then(response => {
-                    let progress = [];
-                    response.data.data.map( d => {
-                        let values = [];
-                        d.values.map(v => {
-                            values.push({x: v.date, y: v.value})
-                        });
-                        progress.push({name: d.name, values: values});
-                    });
-                    progress.map(m => m.values = _.sortBy(m.values, function(o) { return o.x; }));
-                    var action = getProgressSuccessAction(progress);
-                    store.dispatch(action);
-                    return action;
-
-                });
-        });
-    
-}

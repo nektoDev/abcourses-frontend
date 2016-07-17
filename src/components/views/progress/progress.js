@@ -4,7 +4,7 @@ import {LineChart} from 'rd3';
 
 const Progress = React.createClass({
     render: function () {
-        if (typeof this.props.progress === 'undefined'
+        if (typeof this.props.progress === 'undefined' || this.props.progress.length == 0
             || Object.keys(this.props.progress).length === 0) {
             return null;
         }
