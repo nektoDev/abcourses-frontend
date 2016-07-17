@@ -14,7 +14,7 @@ const Vocabulary = React.createClass({
 
         if (typeof this.props.words === 'undefined'
             || this.props.words.length == 0) {
-            return null;
+            return <h3>Well Done! All your words are belong to us!</h3>;
         }
         return (
             <Row>
