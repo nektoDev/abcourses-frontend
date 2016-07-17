@@ -48,7 +48,6 @@ var Header = React.createClass({
                         <IconButton onClick={this.props.removeCheckedHandler}>
                              <FontIcon className="material-icons" color="rgba(255, 255, 255, 0.870588)">clear_all</FontIcon>
                         </IconButton>
-
                     </div>
                     }
                 />

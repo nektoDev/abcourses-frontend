@@ -3,6 +3,11 @@ import {toggleCheckStateAction, shuffleAction,showAnswerAction, removeCheckedAct
 
 var WordMixin = {
 
+    refreshHandler: function(taskType, student) {
+        getHomework(taskType, student.id);
+        store.dispatch(shuffleAction());
+    },
+
     showAnswerHandler: function (e, word) {
         store.dispatch(showAnswerAction(word));
     },
