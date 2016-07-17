@@ -2,7 +2,7 @@ import React from 'react';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 
 //Layouts
-import MainLayout from './components/layouts/main-layout';
+import MainLayout from './components/layouts/main-layout/index';
 import StudentContainer from './components/containers/student-layout-container';
 import WordsLayout from './components/containers/words-layout-container';
 
