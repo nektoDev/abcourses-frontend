@@ -25,15 +25,17 @@ const Vocabulary = React.createClass({
 });
 
 function getCards(words, student, toggleAnswerHandler) {
-
+    let id = 0;
     return (words.map(word => {
+        id++;
         return (
-            <Col key={"col-"+word.wordId} lg={3} xs={12} sm={12} md={6} style={style}>
+            <Col key={"col-"+word.wordId+id} lg={3} xs={12} sm={12} md={6} style={style}>
                 <WordCard word={word}
                           question={word.question}
                           answer={word.answer}
                           toggleAnswerHandler={toggleAnswerHandler}
                           student={student}
+                          id={id}
                 />
             </Col>
         )

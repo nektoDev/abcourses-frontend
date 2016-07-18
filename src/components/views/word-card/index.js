@@ -22,10 +22,10 @@ const WordCard = React.createClass({
     render: function () {
 
         return (
-            <Card key={"card-"+this.props.word.id}
+            <Card key={"card-"+this.props.word.wordId+this.props.id}
                   style={this.props.word.checked ? {backgroundColor: lightBlue50} : {} }
             >
-                <CardTitle key={"card-header-"+this.props.word.id}
+                <CardTitle key={"card-header-"+this.props.word.wordId+this.props.id}
                            title={<div onClick={this.props.toggleAnswerHandler.bind(null, this.props.word)}>{this.props.answer}</div>}
                            showExpandableButton={true}
                            titleStyle={this.props.word.checked ? shownAnswerStyle : hiddenAnswerStyle}
@@ -33,7 +33,7 @@ const WordCard = React.createClass({
                            subtitleStyle={{fontSize:"100%"}}
                 >
                 </CardTitle>
-                <CardText expandable={true}>
+                <CardText expandable={true} key={"card-"+this.props.word.wordId+this.props.id}>
                     <i>{this.props.word.word.pronunciation && this.props.word.word.pronunciation[this.props.student.dialect]? "/" + this.props.word.word.pronunciation[this.props.student.dialect] + "/" : ""}</i>
                     {getTranslations(this.props.word.word.translation)}
                 </CardText>
