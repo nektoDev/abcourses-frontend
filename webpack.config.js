@@ -42,6 +42,9 @@ module.exports = {
             },
             { test: /\.jpg$/, loader: 'file' },
             { test: /\.png$/, loader: 'file' },
+            { test: /\.ico$/, loader: 'file' },
+            { test: /\.xml$/, loader: 'file' },
+            { test: /\.json$/, loader: 'file' },
         ]
     }
 };
