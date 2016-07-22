@@ -17,7 +17,10 @@ const links = [
 ]
 
 export function getUsefulLinks() {
-    var action = getUsefulLinksAction(links);
-    store.dispatch(action);
-    return action;
+    axios.get('http://newenglish.nektodev.ru:8085/api/service/usefulLinks')
+        .then(response => {
+            var action = getUsefulLinksAction(response.data);
+            store.dispatch(action);
+            return action;
+        });
 }
