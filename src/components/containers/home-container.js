@@ -7,6 +7,7 @@ import { HIDE_NAV } from '../../actions/action-types'
 
 //View
 import Home from '../views/home/index';
+import {getUsefulLinks} from "../../api/service-api";
 
 const HomeContainer = React.createClass({
 
@@ -14,14 +15,18 @@ const HomeContainer = React.createClass({
         store.dispatch({type: HIDE_NAV});
     },
 
+    componentWillMount: function () {
+        getUsefulLinks();
+    },
+
     render: function() {
-        return <Home navigation={this.props.navigation}/>;
+        return <Home {...this.props}/>;
     }
 });
 
 const mapStateToProps = function(store) {
     return {
-        navigation: store.navState.navigation
+        usefulLinks: store.serviceStore.usefulLinks,
     };
 };
 

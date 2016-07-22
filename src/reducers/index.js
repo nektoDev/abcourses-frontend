@@ -2,13 +2,13 @@ import {combineReducers,reduceReducers} from 'redux';
 import {responsiveStateReducer} from 'redux-responsive'
 
 // Reducers
-import NavReducer from './nav-reducer';
+import ServiceReducer from './service-reducer';
 import WordsReducer from './words-reducer';
 import StudentReducer from './student-reducer';
 
 // Combine Reducers
 var reducers = combineReducers({
-        navState: NavReducer,
+        serviceStore: ServiceReducer,
         browser: responsiveStateReducer,
         wordsStore: WordsReducer,
         studentStore: StudentReducer,

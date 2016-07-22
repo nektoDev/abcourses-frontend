@@ -1,4 +1,3 @@
-export const GET_NAVIGATION = 'GET_NAVIGATION';
 export const TOGGLE_NAV = 'TOGGLE_NAV';
 export const HIDE_NAV = 'HIDE_NAV';
 export const SHOW_NAV = 'SHOW_NAV';
@@ -16,3 +15,5 @@ export const TOGGLE_ALL_ANSWERS = 'TOGGLE_ALL_ANSWERS';
 export const GET_STUDENT = 'GET_STUDENT';
 
 export const GET_STUDENT_PROGRESS = 'GET_STUDENT_PROGRESS';
+
+export const GET_USEFUL_LINKS = 'GET_USEFUL_LINKS';

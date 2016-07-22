@@ -48,7 +48,7 @@ var MainLayout = React.createClass({
 
 const mapStateToProps = function(store) {
     return {
-        showNav: store.navState.showNav,
+        showNav: store.serviceStore.showNav,
         isMobile: store.browser.lessThan.medium
     };
 };

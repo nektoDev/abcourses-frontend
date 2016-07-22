@@ -9,7 +9,6 @@ import dasha from '../../../img/dasha.jpg';
 import slava from '../../../img/slava.jpg';
 import yuliya from '../../../img/yuliya.jpg';
 
-import Divider from 'material-ui/Divider';
 
 const Home = React.createClass({
     render: function () {
@@ -63,17 +62,7 @@ const Home = React.createClass({
                     <Col lg={3}>
                         <h2>Useful links</h2>
                             <Menu>
-                                <a target="_blank"  href="https://www.oxfordlearnersdictionaries.com/"><MenuItem primaryText="Oxford dictionary"/></a>
-                                <a target="_blank"  href="http://ru.forvo.com/"><MenuItem primaryText="Forvo" /></a>
-                                <a target="_blank"  href="http://translate.academic.ru/"><MenuItem primaryText="Academic translate"/></a>
-                                <a target="_blank"  href="http://www.merriam-webster.com/"><MenuItem primaryText="Merriam-Webster dictionary" /></a>
-                                <a target="_blank"  href="http://www.macmillandictionary.com/"><MenuItem primaryText="MacMillan dictionary" /></a>
-                                <a target="_blank"  href="http://www.collinsdictionary.com/"><MenuItem primaryText="Collins dictionary" /></a>
-                                <a target="_blank"  href="http://dictionary.cambridge.org/"><MenuItem primaryText="Cambridge dictionary" /></a>
-                                <a target="_blank"  href="http://www.thefreedictionary.com/"><MenuItem primaryText="The Free Dictionary dictionary" /></a>
-                                <a target="_blank"  href="http://www.wordreference.com/"><MenuItem primaryText="Wordreference" /></a>
-                                <a target="_blank"  href="https://en.wiktionary.org/wiki/Wiktionary:Main_Page"><MenuItem primaryText="Wiktionary" /></a>
-                                <a target="_blank"  href="http://www.multitran.ru/"><MenuItem primaryText="Multitran" /></a>
+                                {getUsefulLinks(this.props.usefulLinks)}
                             </Menu>
                     </Col>
 
@@ -82,5 +71,19 @@ const Home = React.createClass({
         );
     }
 });
+
+function getUsefulLinks(usefulLinks) {
+
+    if (typeof usefulLinks === 'undefined' || usefulLinks.length == 0) return null;
+
+    return (
+        <div>
+            {usefulLinks.map((link) => {
+                    return <a target="_blank" className="link-not-link" href={link.url}><MenuItem primaryText={link.name}/></a>
+                }
+            )}
+        </div>
+    )
+}
 
 export default Home;

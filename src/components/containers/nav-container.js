@@ -1,26 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import store from '../../store';
 
-//Actions
-import {HIDE_NAV} from '../../actions/action-types';
-
-//View
 import Nav from '../views/Nav/index';
+import {getUsefulLinks} from "../../api/service-api";
 
 const NavContainer = React.createClass({
 
+    componentWillMount: function () {
+        getUsefulLinks();
+    },
+
     render: function() {
-        return <Nav {...this.props} showNav={this.props.showNav} navigation={this.props.navigation} docked={!this.props.isMobile}/>;
+        return <Nav {...this.props} showNav={this.props.showNav} docked={!this.props.isMobile}/>;
     }
 });
 
 const mapStateToProps = function(store) {
     return {
+        usefulLinks: store.serviceStore.usefulLinks,
         student: store.studentStore.student,
-        showNav: store.navState.showNav,
+        showNav: store.serviceStore.showNav,
         isMobile: store.browser.lessThan.medium,
-        navigation: store.navState.navigation
     };
 };
 
