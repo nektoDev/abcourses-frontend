@@ -56,7 +56,7 @@ function getUsefulLinks(usefulLinks) {
         <div>
             <Subheader inset={false}>Useful Links</Subheader>
             {usefulLinks.map((link) => {
-                    return <a target="_blank" className="link-not-link" href={link.url}><MenuItem primaryText={link.name}/></a>
+                    return link.checked ? <a target="_blank" className="link-not-link" href={link.url}><MenuItem primaryText={link.name}/></a> : null;
                 }
             )}
         </div>

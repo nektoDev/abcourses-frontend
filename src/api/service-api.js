@@ -24,3 +24,8 @@ export function getUsefulLinks() {
             return action;
         });
 }
+
+export function saveUsefulLinks(usefulLinks) {
+    axios.post('http://newenglish.nektodev.ru:8085/api/service/usefulLinks', usefulLinks)
+        .then(getUsefulLinks());
+}
