@@ -1,32 +1,26 @@
 import React from 'react';
-import {Router, Route, browserHistory, IndexRoute} from 'react-router';
-
-//Layouts
-import MainLayout from './components/layouts/main-layout/index';
-import StudentContainer from './components/containers/student-layout-container';
-import WordsLayout from './components/containers/words-layout-container';
+import {Router, Route, browserHistory} from 'react-router';
 
 //Components
-import Home from './components/containers/home-container'
-import PronunciationContainer from './components/containers/pronunciation-container'
-import VocabularyContainer from './components/containers/vocabulary-container'
-import ProgressContainer from './components/containers/progress-container'
-import StudentHome from './components/views/student-home/index';
+import App from './containers/App';
+import Home from './containers/Home';
+import StudentLayout from './containers/StudentLayout';
+import CheckWordsLayout from './containers/CheckWordsLayout';
+import CheckVocabulary from './containers/CheckVocabulary';
+import CheckPronunciation from './containers/CheckPronunciation';
+import Progress from './containers/Progress';
 
 export default (
-    <Router history={browserHistory}>
-        <Route component={MainLayout}>
-            <Route path="/">
-                <IndexRoute component={Home}/>
-                <Route path="/:student" component={StudentContainer}>
-
-                    <Route component={WordsLayout}>
-                        <Route path="/:student/vocabulary" component={VocabularyContainer}/>
-                        <Route path="/:student/pronunciation" component={PronunciationContainer}/>
-                    </Route>
-                    <Route path="/:student/progress" component={ProgressContainer}/>
-                </Route>
-            </Route>
+  <Router history={browserHistory}>
+    <Route component={App}>
+      <Route path='/' component={Home}/>
+      <Route path='/:student' component={StudentLayout}>
+        <Route path='/:student/progress' component={Progress}/>
+        <Route component={CheckWordsLayout}>
+          <Route path='/:student/vocabulary' component={CheckVocabulary}/>
+          <Route path='/:student/pronunciation' component={CheckPronunciation}/>
         </Route>
-    </Router>
+      </Route>
+    </Route>
+  </Router>
 );

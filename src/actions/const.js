@@ -1,0 +1,21 @@
+//Service actions
+export const SHOW_APP_BAR = 'SHOW_APP_BAR';
+export const HIDE_APP_BAR = 'HIDE_APP_BAR';
+
+//Links actions
+export const API_LIST_LINKS_SUCCESS = 'API_LIST_LINKS_SUCCESS';
+
+//Students actions
+export const API_LIST_STUDENTS_SUCCESS = 'API_LIST_STUDENTS_SUCCESS';
+export const API_GET_STUDENT_SUCCESS = 'API_GET_STUDENT_SUCCESS';
+export const API_GET_STUDENT_PROGRESS_SUCCESS = 'API_GET_STUDENT_PROGRESS_SUCCESS';
+
+// Check Words Actions
+export const API_GET_CHECK_WORDS_SUCCESS = 'API_GET_CHECK_WORDS_SUCCESS';
+export const CLEAR_WORDS = 'CLEAR_WORDS';
+export const SHOW_ANSWER = 'SHOW_ANSWER';
+export const TOGGLE_ALL_ANSWERS = 'TOGGLE_ALL_ANSWERS';
+export const TOGGLE_ANSWER = 'TOGGLE_ANSWER';
+export const SHUFFLE = 'SHUFFLE';
+export const REMOVE_CHECKED = 'REMOVE_CHECKED';
+export const RETRY = 'RETRY';

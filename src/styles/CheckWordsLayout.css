@@ -1,0 +1,5 @@
+.word-col {
+ padding-top: 0.5rem;
+ padding-bottom: 0.5rem;
+ transition: all 0.5s linear;
+}

@@ -1,0 +1,96 @@
+@import "github-markdown.css";
+
+span[type=button] {
+  appearance: none;
+  -webkit-appearance: none
+}
+a[type=button] {
+  appearance: none;
+  -webkit-appearance: none
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.content {
+  padding-top: 65px;
+  margin: auto;
+  padding-right: 2rem;
+}
+
+.card {
+  margin: 5px;
+}
+
+.card .link {
+  cursor: pointer;
+}
+
+.words-layout {
+  margin-bottom: 2rem !important;
+}
+
+.red {
+  background-color: red;
+}
+
+.link-not-link {
+  color: inherit !important;
+  text-decoration: none;
+}
+.link-not-link:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.app-bar {
+  position: fixed !important;
+  top: 0;
+  z-index: 1301;
+}
+
+.app-bar > .app-bar-icons {
+  color: #fff !important;
+}
+
+.title {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.words-count {
+  font-size: 18px;
+  vertical-align: text-top;;
+  padding: 12px;
+}
