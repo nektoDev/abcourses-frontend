@@ -41,7 +41,7 @@ export function getStudent(dispatch) {
 export function getStudentProgress(dispatch) {
 
   return (id) => {
-    axios.get('http://newenglish.nektodev.ru:8085/api/student/progress/' + id)
+    axios.get(config.default.apiHost + 'student/progress/' + id)
       .then(response => {
         var action = getStudentProgressActionCreator(response.data);
         dispatch(action);
