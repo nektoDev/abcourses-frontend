@@ -1,11 +1,13 @@
 import {API_LIST_LINKS_SUCCESS} from './const';
+import axios from 'axios';
+let config = require('config');
 
 function listLinksCreator(parameter) {
-  return { type: API_LIST_LINKS_SUCCESS, parameter };
+  return {type: API_LIST_LINKS_SUCCESS, parameter};
 }
 
 const links = [
-  {name: 'Oxford dictionary', url: 'https://www.oxfordlearnersdictionaries.com/', checked:true},
+  {name: 'Oxford dictionary', url: 'https://www.oxfordlearnersdictionaries.com/', checked: true},
   {name: 'Forvo', url: 'http://ru.forvo.com/', checked: true},
   {name: 'Academic translate', url: 'http://translate.academic.ru/'},
   {name: 'Merriam-Webster dictionary', url: 'http://www.merriam-webster.com/'},
@@ -18,6 +20,13 @@ const links = [
   {name: 'Multitran', url: 'http://www.multitran.ru/'}
 ];
 
-export function listLinks() {
-    return listLinksCreator(links);
+export function listLinks(dispatch) {
+  return () => {
+    axios.get(config.default.apiHost + 'service/usefulLinks')
+      .then(response => {
+        var action = listLinksCreator(response.data);
+        dispatch(action);
+        return action;
+      });
+  };
 }

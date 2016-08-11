@@ -42,12 +42,12 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
   const actions = {
-    listLinks: require('../actions/usefulLinksAction.js').listLinks,
     toggleAllAnswers: require('../actions/checkWordsActions.js').toggleAllAnswersAction,
     shuffle: require('../actions/checkWordsActions.js').shuffleAction,
     removeChecked: require('../actions/checkWordsActions.js').removeCheckedAction
   };
   const actionMap = { actions: bindActionCreators(actions, dispatch) };
+  actionMap.actions.listLinks = require('../actions/usefulLinksAction').listLinks(dispatch)
   return actionMap;
 }
 export default connect(mapStateToProps, mapDispatchToProps)(App);

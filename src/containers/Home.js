@@ -36,11 +36,11 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   const actions = {
-    listLinks: require('../actions/usefulLinksAction').listLinks
 
   };
   let actionMap = { actions: bindActionCreators(actions, dispatch) };
   actionMap.actions.listStudents = require('../actions/studentsActions.js').listStudents(dispatch);
+  actionMap.actions.listLinks = require('../actions/usefulLinksAction').listLinks(dispatch)
   return actionMap;
 }
 
