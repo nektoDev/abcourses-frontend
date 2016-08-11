@@ -6,6 +6,7 @@ if [ -z "$RELEASE" ]
   then
     $RELEASE=minor
 fi
+npm run dist
 npm run release:$RELEASE
 VERSION=`jq '.version' package.json | tr -d '"'`
 echo $VERSION
