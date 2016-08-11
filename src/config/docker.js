@@ -3,8 +3,8 @@
 import baseConfig from './base';
 
 let config = {
-  appEnv: 'dev',
-  apiHost: 'http://localhost:8080/api/'
+  appEnv: 'docker',
+  apiHost: 'http://localhost:8085/api/'
 };
 
 export default Object.freeze(Object.assign({}, baseConfig, config));
