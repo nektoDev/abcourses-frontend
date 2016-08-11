@@ -6,6 +6,7 @@ import {Table, TableBody, TableRow, TableRowColumn} from 'material-ui/Table';
 import {Row, Col} from 'react-flexgrid';
 import {lightGreenA100} from 'material-ui/styles/colors';
 import _ from 'lodash';
+import Loader from './LoaderComponent';
 
 require('styles//Progress.css');
 var moment = require('moment');
@@ -28,7 +29,7 @@ let ProgressComponent = (props) => {
     || Object.keys(props.progress).length === 0) {
     return (
       <div className='progress-component'>
-        LOADING...
+        <Loader/>
       </div>
     );
   }

@@ -1,4 +1,5 @@
 @import "github-markdown.css";
+@import "Loader.css";
 
 span[type=button] {
   appearance: none;
