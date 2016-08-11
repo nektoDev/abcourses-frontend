@@ -20,13 +20,13 @@ const CheckWordsReducer = function (state = initialState, action) {
     case Action.SHOW_ANSWER: {
       var newWord = action.word;
       newWord.checked = true;
-      return {...state, words: replaceWord(state.words, newWord, action.word.wordId)};
+      return {...state, words: replaceWord(state.words, newWord, action.word.id)};
     }
 
     case Action.TOGGLE_ANSWER: {
       var newWord = action.word;
       newWord.checked = !action.word.checked;
-      return{...state, words: replaceWord(state.words, newWord, action.word.wordId)};
+      return{...state, words: replaceWord(state.words, newWord, action.word.id)};
     }
 
     case Action.SHUFFLE: {
@@ -63,7 +63,7 @@ const CheckWordsReducer = function (state = initialState, action) {
 function replaceWord(words, newWord, id) {
   var newWords = _.cloneDeep(words);
 
-  let index = _.findIndex(newWords, (w) => (w.wordId === id));
+  let index = _.findIndex(newWords, (w) => (w.id === id));
   newWords[index] = newWord;
   return newWords;
 }

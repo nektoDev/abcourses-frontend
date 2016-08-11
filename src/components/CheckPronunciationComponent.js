@@ -19,17 +19,14 @@ let CheckPronunciationComponent = (props) => {
 };
 
 function getCards(words, student, toggleAnswerStateAction) {
-  let id = 0;
   return (words.map(word => {
-    id++;
     return (
-      <Col key={'col-'+word.wordId+id} lg={3} xs={12} sm={12} md={6} className='word-col'>
+      <Col key={'col-'+word.id} lg={3} xs={12} sm={12} md={6} className='word-col'>
         <WordCard word={word}
-                  key={'wc-'+word.wordId+id}
+                  key={'wc-'+word.id}
                   question={word.question}
                   answer={word.answer}
                   student={student}
-                  id={id}
                   toggleAnswerStateAction={toggleAnswerStateAction}
         />
       </Col>

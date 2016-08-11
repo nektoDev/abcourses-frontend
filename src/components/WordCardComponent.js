@@ -18,10 +18,10 @@ const hiddenAnswerStyle = {
 };
 
 let WordCardComponent = (props) => (
-  <Card key={'card-'+props.word.wordId+props.id} className='check-word-card'
+  <Card key={'card-'+props.word.is} className='check-word-card'
         style={props.word.checked ? {backgroundColor: lightBlue50} : {} }
   >
-    <CardTitle key={'card-header-'+props.word.wordId+props.id}
+    <CardTitle key={'card-header-'+props.word.id}
                title={<div onClick={props.toggleAnswerStateAction.bind(null, props.word)}>{props.answer}</div>}
                showExpandableButton={true}
                titleStyle={props.word.checked ? shownAnswerStyle : hiddenAnswerStyle}
@@ -29,7 +29,7 @@ let WordCardComponent = (props) => (
                subtitleStyle={{fontSize:'100%'}}
     >
     </CardTitle>
-    <CardText expandable={true} key={'card-'+props.word.wordId+props.id}>
+    <CardText expandable={true} key={'card-'+props.word.id}>
       <i>{props.word.word.pronunciation && props.word.word.pronunciation[props.student.dialect]? '/' + props.word.word.pronunciation[props.student.dialect] + '/' : ''}</i>
       {getTranslations(props.word.word.translation)}
     </CardText>
