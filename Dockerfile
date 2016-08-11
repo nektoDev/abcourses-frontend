@@ -4,5 +4,3 @@ COPY ./dist/ /usr/share/nginx/html
 
 WORKDIR /var/www
 EXPOSE 80
-RUN npm install -g webpack && npm install
-ENTRYPOINT npm start
