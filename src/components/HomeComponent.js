@@ -11,7 +11,7 @@ require('styles//Home.css');
 
 let HomeComponent = (props) => (
   <div>
-    <h1>Alexey Baskinov English Courses
+    <h1>Alexey Baskinov Courses
     </h1>
     <Row>
       <Col lg={9}>
