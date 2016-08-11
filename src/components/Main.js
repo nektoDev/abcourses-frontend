@@ -28,11 +28,19 @@ injectTapEventPlugin();
 
 class AppComponent extends React.Component {
   toggleNavBar() {
-    this.setState({isNavBarOpen: !this.state.isNavBarOpen})
+    this.setState({isNavBarOpen: !this.state.isNavBarOpen});
+  }
+
+  hideNavBar(self) {
+    if (self) self.setState({isNavBarOpen: false});
   }
 
   handleTitleClick() {
     browserHistory.push('/')
+  }
+
+  componentDidMount() {
+    browserHistory.listen(this.hideNavBar.bind(this, this));
   }
 
   state = {
