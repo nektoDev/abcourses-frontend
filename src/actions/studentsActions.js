@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {API_LIST_STUDENTS_SUCCESS, API_GET_STUDENT_SUCCESS, API_GET_STUDENT_PROGRESS_SUCCESS} from './const';
 let config = require('config');
+var jsonrpc = require('jsonrpc-lite');
 
 function listStudentsCreator(parameter) {
   return {type: API_LIST_STUDENTS_SUCCESS, parameter};
@@ -17,9 +18,9 @@ function getStudentProgressActionCreator(parameter) {
 export function listStudents(dispatch) {
 
   return () => {
-    axios.get(config.default.apiHost + 'student/')
+    axios.post(config.default.apiHost + 'student', jsonrpc.request('1', 'list'))
       .then(response => {
-        var action = listStudentsCreator(response.data);
+        var action = listStudentsCreator(jsonrpc.parseObject(response.data).payload.result);
         dispatch(action);
         return action;
       });
