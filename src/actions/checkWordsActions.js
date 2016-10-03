@@ -9,6 +9,7 @@ import {
 } from './const';
 import axios from 'axios';
 let config = require('config');
+var jsonrpc = require('jsonrpc-lite');
 
 function getCheckWordsSuccessActionCreator(words) {
   return {
@@ -40,14 +41,26 @@ export const TASK_TYPE = {
 
 export function getCheckWords(dispatch) {
   return (task, student) => {
-    axios.get(config.default.apiHost +'/word/homework/' + task + '/' + student)
+    axios.post(config.default.apiHost +'/homework', jsonrpc.request('1', 'getStudentHomework', [student]))
       .then(response => {
-        let homework = response.data;
-        homework.words.map(function (w) {
-          w.checked = false;
-        });
+        let homework = jsonrpc.parseObject(response.data).payload.result;
 
-        let action = getCheckWordsSuccessActionCreator(homework.words);
+
+        let action;
+        if (task == TASK_TYPE.PRONUNCIATION) {
+          homework.pronunciation.map(function (w) {
+            w.checked = false;
+          });
+          action = getCheckWordsSuccessActionCreator(homework.pronunciation);
+        } else {
+          homework.vocabulary.map(function (w) {
+            w.checked = false;
+          });
+          action = getCheckWordsSuccessActionCreator(homework.vocabulary);
+
+        }
+
+
         dispatch(action);
 
         return action;
