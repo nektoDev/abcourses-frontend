@@ -98,7 +98,6 @@ function getTest(data) {
 }
 
 function getBest(progressDataMap) {
-  console.log(progressDataMap)
   return (
     _.sortBy(Object.keys(progressDataMap), k => (-Number(k))).map(key => {
       if (progressDataMap[key].pronunciation == 100 && progressDataMap[key].vocabulary == 100) {
