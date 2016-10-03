@@ -3,7 +3,8 @@ import * as Action from '../actions/const';
 const initialState = {
   students: [],
   student: {},
-  progress: {}
+  progress: {},
+  progressChartDateValuesMap: {}
 };
 
 module.exports = function(state = initialState, action) {
@@ -16,6 +17,9 @@ module.exports = function(state = initialState, action) {
     }
     case Action.API_GET_STUDENT_PROGRESS_SUCCESS: {
       return {...state, progress: action.parameter};
+    }
+    case Action.API_GET_STUDENT_PROGRESS_CHART_SUCCESS: {
+      return {...state, progressChartDateValuesMap: action.parameter.progressDateValuesMap};
     }
     default: {
       return state;

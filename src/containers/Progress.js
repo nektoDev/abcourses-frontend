@@ -7,21 +7,21 @@ import {connect} from 'react-redux';
 import ProgressComponent from '../components/ProgressComponent';
 var moment = require('moment');
 
-var progressDataMap = {};
-
 class Progress extends Component {
 
   componentWillMount() {
-    if (this.props.student.id)
+    if (this.props.student.id) {
       this.props.actions.getStudentProgress(this.props.student.id);
-    else {
+      this.props.actions.getStudentProgressChart(this.props.student.id);
+    } else {
       this.props.actions.getStudent(this.props.params.student);
       this.props.actions.getStudentProgress(this.props.params.student);
+      this.props.actions.getStudentProgressChart(this.props.params.student);
     }
   }
 
   render() {
-    const {actions, student, progress, progressData} = this.props;
+    const {actions, student, progress, progressData, progressDataMap} = this.props;
     return <ProgressComponent actions={actions} student={student} progress={progress} progressData={progressData}
                               progressDataMap={progressDataMap}/>;
   }
@@ -32,8 +32,6 @@ function convertProgressData(progress) {
     || Object.keys(progress).length === 0) {
     return null;
   }
-
-  progressDataMap = {};
 
   let progressData = {
     labels: [],
@@ -72,27 +70,19 @@ function convertProgressData(progress) {
     data: []
   };
 
-  progress.map(data => {
-    data.values.map(v => {
-      progressDataMap[v.date] = progressDataMap[v.date] || {};
-      progressDataMap[v.date][data.name] = progressDataMap[v.date][data.name] || {};
-      progressDataMap[v.date][data.name] = v.value;
-    });
+  Object.keys(progress).map(key => {
+    vocData.data.push(progress[key].vocabulary);
+    pronData.data.push(progress[key].pronunciation);
+    testData.data.push(progress[key].test);
   });
 
-  Object.keys(progressDataMap).map(key => {
-    vocData.data.push(progressDataMap[key].Vocabulary);
-    pronData.data.push(progressDataMap[key].Pronunciation);
-    testData.data.push(progressDataMap[key].Test);
-  });
-
-  progressData.labels = Object.keys(progressDataMap);
+  progressData.labels = Object.keys(progress);
   progressData.datasets.push(vocData);
   progressData.datasets.push(pronData);
   progressData.datasets.push(testData);
 
   for (var i = 0; i < progressData.labels.length; i++) {
-    progressData.labels[i] = moment(Number(progressData.labels[i])).format('DD MMM YY');
+    progressData.labels[i] = moment(progressData.labels[i]).format('DD MMM YY');
   }
   return progressData;
 }
@@ -105,7 +95,8 @@ function mapStateToProps(state) {
   const props = {
     student: state.studentsStore.student,
     progress: state.studentsStore.progress,
-    progressData: convertProgressData(state.studentsStore.progress)
+    progressDataMap: state.studentsStore.progressChartDateValuesMap,
+    progressData: convertProgressData(state.studentsStore.progressChartDateValuesMap)
   };
   return props;
 }
@@ -115,6 +106,7 @@ function mapDispatchToProps(dispatch) {
   const actionMap = {actions: bindActionCreators(actions, dispatch)};
   actionMap.actions.getStudent = require('../actions/studentsActions.js').getStudent(dispatch);
   actionMap.actions.getStudentProgress = require('../actions/studentsActions.js').getStudentProgress(dispatch);
+  actionMap.actions.getStudentProgressChart = require('../actions/studentsActions.js').getStudentProgressChart(dispatch);
   return actionMap;
 }
 
