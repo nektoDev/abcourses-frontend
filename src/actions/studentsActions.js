@@ -34,9 +34,9 @@ export function listStudents(dispatch) {
 export function getStudent(dispatch) {
 
   return (id) => {
-    axios.get(config.default.apiHost + 'student/' + id)
+    axios.post(config.default.apiHost + 'student', jsonrpc.request('1', 'get', [id]))
       .then(response => {
-        var action = getStudentCreator(response.data);
+        var action = getStudentCreator(jsonrpc.parseObject(response.data).payload.result);
         dispatch(action);
         return action;
       });
