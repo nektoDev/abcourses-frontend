@@ -4,7 +4,7 @@ set -e
 RELEASE=$1
 if [ -z "$RELEASE" ]
   then
-    $RELEASE=minor
+    RELEASE="minor"
 fi
 npm run dist
 npm run release:$RELEASE
