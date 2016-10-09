@@ -9,8 +9,8 @@ import {TASK_TYPE} from '../actions/checkWordsActions'
 
 class CheckPronunciation extends Component {
   loadWords() {
-    if (this.props.student && this.props.student.id)
-      this.props.actions.getCheckWords(TASK_TYPE.PRONUNCIATION, this.props.student.id);
+    if (this.props.student && this.props.student.id && this.props.student.id == this.props.params.student)
+      this.props.actions.getCheckWords(TASK_TYPE.PRONUNCIATION, this.props.params.student);
     else {
       this.props.actions.getStudent(this.props.params.student);
       this.props.actions.getCheckWords(TASK_TYPE.PRONUNCIATION, this.props.params.student);
