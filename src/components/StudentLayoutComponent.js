@@ -14,7 +14,7 @@ let StudentLayoutComponent = (props) => (
         <h1><Link className='link-not-link' to={'/'+props.student.id}>{props.student.name}</Link></h1>
       </Col>
     </Row>
-    {props.children || <StudentHomeComponent student={props.student}/>}
+    {props.children || <StudentHomeComponent student={props.student} studentStats={props.studentStats}/>}
   </div>
 );
 
