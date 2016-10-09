@@ -1,7 +1,7 @@
 {
   "name": "baskinovFrontend",
   "private": true,
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Frontend part of project for English courses by Alexey Baskinov.",
   "main": "index.js",
   "scripts": {
