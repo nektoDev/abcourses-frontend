@@ -11,8 +11,6 @@ let CheckVocabularyComponent = (props) => {
     || props.words.length == 0) {
     return <h3>Well Done! All your words are belong to us!</h3>;
   }
-  console.log(props)
-
   return (
     <Row>
       {getCards(props.words, props.student, props.actions.toggleAnswerStateAction)}
@@ -20,7 +18,6 @@ let CheckVocabularyComponent = (props) => {
 };
 
 function getCards(words, student, toggleAnswerStateAction) {
-  console.log(words)
   return (words.map(word => {
     return (
       <Col key={'col-'+word.id} lg={3} xs={12} sm={12} md={6} className='word-col'>

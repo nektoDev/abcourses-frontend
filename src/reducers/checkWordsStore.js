@@ -5,7 +5,6 @@ const initialState = {
   words: []
 }
 
-
 const CheckWordsReducer = function (state = initialState, action) {
 
   switch (action.type) {

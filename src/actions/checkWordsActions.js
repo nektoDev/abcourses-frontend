@@ -38,33 +38,32 @@ export const TASK_TYPE = {
 };
 
 
-
 export function getCheckWords(dispatch) {
   return (task, student) => {
-    axios.post(config.default.apiHost +'/homework', jsonrpc.request('1', 'getStudentHomework', [student]))
-      .then(response => {
-        let homework = jsonrpc.parseObject(response.data).payload.result;
-
-
-        let action;
-        if (task == TASK_TYPE.PRONUNCIATION) {
-          homework.pronunciation.map(function (w) {
+    if (task == TASK_TYPE.PRONUNCIATION) {
+      axios.post(config.default.apiHost + '/homework', jsonrpc.request('1', 'getPronunciation', [student]))
+        .then(response => {
+          let homework = jsonrpc.parseObject(response.data).payload.result;
+          homework.words.map(function (w) {
             w.checked = false;
           });
-          action = getCheckWordsSuccessActionCreator(homework.pronunciation);
-        } else {
-          homework.vocabulary.map(function (w) {
+          let action = getCheckWordsSuccessActionCreator(homework.words);
+          dispatch(action);
+          return action;
+        })
+    } else {
+      axios.post(config.default.apiHost + '/homework', jsonrpc.request('1', 'getVocabulary', [student]))
+        .then(response => {
+          let homework = jsonrpc.parseObject(response.data).payload.result;
+          console.log(homework.words)
+          homework.words.map(function (w) {
             w.checked = false;
           });
-          action = getCheckWordsSuccessActionCreator(homework.vocabulary);
-
-        }
-
-
-        dispatch(action);
-
-        return action;
-      })
+          let action = getCheckWordsSuccessActionCreator(homework.words);
+          dispatch(action);
+          return action;
+        })
+    }
   };
 }
 
