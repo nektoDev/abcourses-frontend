@@ -22,9 +22,9 @@ function getStudentProgressChartActionCreator(parameter) {
 export function listStudents(dispatch) {
 
   return () => {
-    axios.post(config.default.apiHost + 'student', jsonrpc.request('1', 'list'))
+    axios.post(config.default.apiHost + 'student', jsonrpc.request('1', 'listStudents'))
       .then(response => {
-        var action = listStudentsCreator(jsonrpc.parseObject(response.data).payload.result);
+        var action = listStudentsCreator(jsonrpc.parseObject(response.data).payload.result.students);
         dispatch(action);
         return action;
       });
