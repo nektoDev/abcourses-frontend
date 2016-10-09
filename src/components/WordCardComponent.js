@@ -30,8 +30,9 @@ let WordCardComponent = (props) => (
     >
     </CardTitle>
     <CardText expandable={true} key={'card-'+props.word.id}>
-      <i>{props.word.wordData.pronunciation && props.word.wordData.pronunciation[props.student.dialect]? '/' + props.word.wordData.pronunciation[props.student.dialect] + '/' : ''}</i>
+      <i>{props.word.wordData.pronunciations && props.word.wordData.pronunciations[props.student.dialect]? '/' + props.word.wordData.pronunciations[props.student.dialect] + '/' : ''}</i>
       {getTranslations(props.word.wordData.translations)}
+
     </CardText>
   </Card>
 );
