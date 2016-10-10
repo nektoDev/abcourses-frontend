@@ -55,7 +55,6 @@ export function getCheckWords(dispatch) {
       axios.post(config.default.apiHost + '/homework', jsonrpc.request('1', 'getVocabulary', [student]))
         .then(response => {
           let homework = jsonrpc.parseObject(response.data).payload.result;
-          console.log(homework.words)
           homework.words.map(function (w) {
             w.checked = false;
           });

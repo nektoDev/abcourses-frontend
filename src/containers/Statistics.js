@@ -13,7 +13,6 @@ class Statistics extends Component {
 
   render() {
     const {studentStats} = this.props;
-    console.log(this.props)
     return <StatisticsComponent studentStats={studentStats}/>;
   }
 }
