@@ -10,7 +10,7 @@ var moment = require('moment');
 class Progress extends Component {
 
   componentWillMount() {
-    if (this.props.student && this.props.student.id && this.props.student.id == this.props.params.student) {
+    if (typeof this.props.student && this.props.student.id && this.props.student.id == this.props.params.student) {
       this.props.actions.getStudentProgress(this.props.params.student);
       this.props.actions.getStudentProgressChart(this.props.params.student);
     } else {

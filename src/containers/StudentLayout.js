@@ -13,8 +13,8 @@ class StudentLayout extends Component {
   }
 
   render() {
-    const {actions, student, children, studentStats} = this.props;
-    return <StudentLayoutComponent actions={actions} student={student} studentStats={studentStats} children={children}/>;
+    const {actions, student, children, studentStats, params} = this.props;
+    return <StudentLayoutComponent actions={actions} params={params} student={student} studentStats={studentStats} children={children}/>;
   }
 }
 
