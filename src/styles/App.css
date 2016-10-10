@@ -5,6 +5,7 @@ span[type=button] {
   appearance: none;
   -webkit-appearance: none
 }
+
 a[type=button] {
   appearance: none;
   -webkit-appearance: none
@@ -20,7 +21,7 @@ body {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
+  font-size: 24px; /* Preferred icon size */
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -67,6 +68,7 @@ body {
   color: inherit !important;
   text-decoration: none;
 }
+
 .link-not-link:hover {
   color: inherit !important;
   text-decoration: none !important;
@@ -94,4 +96,16 @@ body {
   font-size: 18px;
   vertical-align: text-top;;
   padding: 12px;
+}
+
+@media only screen and (min-width: 75em) {
+  .col-lg-offset-0 {
+    margin-left: 0 !important;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  .col-md-offset-0 {
+    margin-left: 0 !important;
+  }
 }

@@ -14,7 +14,7 @@ require('styles//Statistics.css');
 let StatisticsComponent = (props) => (
   <div>
     <Row>
-      <Col sm={12}>
+      <Col sm={12} xs={12}>
         {getStatistics(props.studentStats)}
       </Col>
     </Row>
@@ -29,13 +29,13 @@ function getStatistics(stats) {
     return (
       <div>
         <Row>
-          <Col sm={12}><h2>Statistics</h2></Col>
+          <Col sm={12} xs={12}><h2>Statistics</h2></Col>
         </Row>
         <Row>
-          <Col lg={4} md={6} sm={12}>
+          <Col lg={4} md={6} sm={12} xs={12}>
             <Row>
               <Subheader className="stat-subheader">Your vocabulary contains</Subheader>
-              <Col lg={6} md={6} sm={6}>
+              <Col lg={6} md={6} sm={6} xs={6}>
                 <div className="stat-number stat-number-accent">
                   <div className="number">
                     {stats.wordsCount}
@@ -45,7 +45,7 @@ function getStatistics(stats) {
                   </div>
                 </div>
               </Col>
-              <Col lg={6} md={6} sm={6}>
+              <Col lg={6} md={6} sm={6} xs={6}>
                 <div className="stat-number stat-number-accent ">
                   <div className="number ">
                     {stats.uniqueWordsCount}
@@ -58,10 +58,10 @@ function getStatistics(stats) {
             </Row>
           </Col>
 
-          <Col lg={4} md={6} sm={12}>
+          <Col lg={4} md={6} sm={12} xs={12}>
             <Row>
               <Subheader className="stat-subheader">Your have done</Subheader>
-              <Col lg={6} md={6} sm={12}>
+              <Col lg={6} md={6} sm={6} xs={6}>
                 <div className="stat-number">
                   <div className="number">
                     {stats.testCount}
@@ -71,7 +71,7 @@ function getStatistics(stats) {
                   </div>
                 </div>
               </Col>
-              <Col lg={6} md={6} sm={12}>
+              <Col lg={6} md={6} sm={6} xs={6}>
                 <div className="stat-number">
                   <div className="number">
                     {stats.homeworksCount}
@@ -84,10 +84,10 @@ function getStatistics(stats) {
             </Row>
           </Col>
 
-          <Col lg={4} md={6} sm={12}>
+          <Col lg={4} md={6} sm={12} xs={12}>
             <Row>
               <Subheader className="stat-subheader">Homework contains:</Subheader>
-              <Col lg={6} md={6} sm={12}>
+              <Col lg={6} md={6} sm={6} xs={6}>
                 <div className="stat-number">
                   <div className="number">
                     {Number(stats.avgVocabularyWordsCount).toFixed(2)}
@@ -97,7 +97,7 @@ function getStatistics(stats) {
                   </div>
                 </div>
               </Col>
-              <Col lg={6} md={6} sm={12}>
+              <Col lg={6} md={6} sm={6} xs={6}>
                 <div className="stat-number">
                   <div className="number">
                     {Number(stats.avgPronunciationWordsCount).toFixed(2)}
@@ -116,7 +116,7 @@ function getStatistics(stats) {
         <br/>
 
         <Row>
-          <Col lg={2} md={4} sm={6}>
+          <Col lg={2} md={4} smOffset={3} xsOffset={3} mdOffset={0} lgOffset={0} sm={6} xs={6}>
             <div
               className={Number(stats.topScoreCount) > "0" ? "stat-number stat-number-accent" : "stat-number stat-number-fail"}>
               <div className="number">
@@ -127,7 +127,7 @@ function getStatistics(stats) {
               </div>
             </div>
           </Col>
-          <Col lg={2} md={4} sm={6}>
+          <Col lg={2} md={4} sm={6} xs={6}>
             <div
               className={Number(stats.topVocabularyCount) > "0" ? "stat-number" : "stat-number stat-number-fail"}>
               <div className="number">
@@ -138,7 +138,7 @@ function getStatistics(stats) {
               </div>
             </div>
           </Col>
-          <Col lg={2} md={4} sm={6}>
+          <Col lg={2} md={4}sm={6} xs={6}>
             <div
               className={Number(stats.topPronunciationCount) > "0" ? "stat-number" : "stat-number stat-number-fail"}>
               <div className="number">
@@ -150,7 +150,7 @@ function getStatistics(stats) {
             </div>
           </Col>
 
-          <Col lg={2} md={4} sm={6}>
+          <Col lg={2} md={4} sm={6} xs={6}>
             <div className={getClassForScoreStatistics(stats.avgVocabularyScore)}>
               <div className="stat-number-progress"></div>
               <div className="stat-number-progress-percentage" style={{width: stats.avgVocabularyScore + "%"}}></div>
@@ -162,7 +162,7 @@ function getStatistics(stats) {
               </div>
             </div>
           </Col>
-          <Col lg={2} md={4} sm={6}>
+          <Col lg={2} md={4} sm={6} xs={6}>
             <div className={getClassForScoreStatistics(stats.avgPronunciationScore)}>
               <div className="stat-number-progress"></div>
               <div className="stat-number-progress-percentage" style={{width: stats.avgPronunciationScore + "%"}}></div>
@@ -174,7 +174,7 @@ function getStatistics(stats) {
               </div>
             </div>
           </Col>
-          <Col lg={2} md={4} sm={6}>
+          <Col lg={2} md={4} sm={6} xs={6}  smOffset={3} xsOffset={3}  mdOffset={0} lgOffset={0}>
             <div className={getClassForScoreStatistics(stats.avgTestScore)}>
               <div className="stat-number-progress"></div>
               <div className="stat-number-progress-percentage" style={{width: stats.avgTestScore + "%"}}></div>
@@ -197,7 +197,7 @@ function getStatistics(stats) {
           <Subheader>Words that appeared more frequently</Subheader>
           {stats.mostFrequentWords.map(w => {
             return (
-              <div lg={6} md={4} sm={4} className="stat-chip">
+              <div lg={6} md={4} sm={4} xs={4} className="stat-chip">
                 <Chip backgroundColor={Color.grey300}>
                   <Avatar size={32} backgroundColor={Color.grey600}>{w.countUses[stats.student]}</Avatar>
                   {w.id}
