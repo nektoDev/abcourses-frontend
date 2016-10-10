@@ -77,7 +77,7 @@ function getStatistics(stats) {
                     {stats.homeworksCount}
                   </div>
                   <div className="annotation">
-                    Homeworks <br/>with average:
+                    Homeworks
                   </div>
                 </div>
               </Col>
