@@ -1,0 +1,74 @@
+.stat-number {
+  /*padding: 1em;*/
+}
+
+.stat-number .number {
+  text-align: center;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.stat-subheader {
+  text-align: center;
+}
+
+.stat-number-accent {
+  color: #0288D1 !important;
+}
+
+.stat-number-success {
+  color: #4CAF50 !important;
+}
+
+.stat-number-warning {
+  color: #FF8F00 !important;
+}
+
+.stat-number-fail {
+  color: #c62828 !important;
+}
+
+.stat-number-success .stat-number-progress-percentage {
+  background-color: #4CAF50 !important;
+}
+
+
+.stat-number-warning .stat-number-progress-percentage {
+  background-color: #FF8F00 !important;
+}
+
+
+.stat-number-fail .stat-number-progress-percentage {
+  background-color: #c62828 !important;
+}
+
+.stat-number-progress {
+  background-color: rgb(197, 197, 197);
+  height: 1px;
+}
+.stat-number-progress-percentage {
+  margin-top: -1px;
+  height: 1px;
+}
+
+.stat-number .annotation {
+  text-align: center;
+  margin-top: -0.5em;
+  line-height: 1.2 !important;
+}
+
+.annotation {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  opacity: 0.75;
+}
+
+.stat-chip {
+  padding: 0.25em;
+  -moz-border-radius:24px;
+  -webkit-border-radius: 24px;
+}
+
+button, html [type="button"], [type="reset"], [type="submit"] {
+   -webkit-appearance: none;
+}
