@@ -158,7 +158,7 @@ function getStatistics(stats) {
                 className={Number(stats.avgTestScoreDif) > 0 ? "number  stat-number-dif-up" : "number stat-number-dif-down"}>
                 <div className="tooltip">
                   {Number(stats.avgTestScore).toFixed(2)}
-                  <span className="tooltiptext">{(Number(stats.avgPronunciationScoreDif)<0?'':'+') + Number(stats.avgTestScoreDif).toFixed(2)}</span>
+                  <span className="tooltiptext">{(Number(stats.avgTestScoreDif)<0?'':'+') + (Number(stats.avgTestScoreDif).toFixed(2))}</span>
                 </div>
               </div>
               <div className="annotation">
@@ -174,7 +174,7 @@ function getStatistics(stats) {
                 className={Number(stats.avgVocabularyScoreDif) > 0 ? "number stat-number-dif-up" : "number stat-number-dif-down"}>
                 <div className="tooltip">
                   {Number(stats.avgVocabularyScore).toFixed(2)}
-                  <span className="tooltiptext">{(Number(stats.avgPronunciationScoreDif)<0?'':'+') + Number(stats.avgVocabularyScoreDif).toFixed(2)}</span>
+                  <span className="tooltiptext">{(Number(stats.avgVocabularyScoreDif)<0?'':'+') + Number(stats.avgVocabularyScoreDif).toFixed(2)}</span>
                 </div>
               </div>
               <div className="annotation">
