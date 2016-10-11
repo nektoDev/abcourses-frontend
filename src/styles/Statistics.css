@@ -51,6 +51,22 @@
   height: 1px;
 }
 
+.stat-number-dif-up:after {
+  content: "↑";
+  color: #4CAF50;
+  font-weight: 100;
+  font-family: cursive;
+  position: absolute;
+}
+
+.stat-number-dif-down:after {
+  content: "\2193";
+  color: #c62828;
+  font-weight: 100;
+  font-family: cursive;
+  position: absolute;
+}
+
 .stat-number .annotation {
   text-align: center;
   margin-top: -0.5em;

@@ -138,7 +138,7 @@ function getStatistics(stats) {
               </div>
             </div>
           </Col>
-          <Col lg={2} md={4}sm={6} xs={6}>
+          <Col lg={2} md={4} sm={6} xs={6}>
             <div
               className={Number(stats.topPronunciationCount) > "0" ? "stat-number" : "stat-number stat-number-fail"}>
               <div className="number">
@@ -150,12 +150,16 @@ function getStatistics(stats) {
             </div>
           </Col>
 
-          <Col lg={2} md={4} sm={6} xs={6}  smOffset={3} xsOffset={3}  mdOffset={0} lgOffset={0}>
+          <Col lg={2} md={4} sm={6} xs={6} smOffset={3} xsOffset={3} mdOffset={0} lgOffset={0}>
             <div className={getClassForScoreStatistics(stats.avgTestScore)}>
               <div className="stat-number-progress"></div>
               <div className="stat-number-progress-percentage" style={{width: stats.avgTestScore + "%"}}></div>
-              <div className="number">
-                {Number(stats.avgTestScore).toFixed(2)}
+              <div
+                className={Number(stats.avgTestScoreDif) > 0 ? "number  stat-number-dif-up" : "number stat-number-dif-down"}>
+                <div className="tooltip">
+                  {Number(stats.avgTestScore).toFixed(2)}
+                  <span className="tooltiptext">{(Number(stats.avgPronunciationScoreDif)<0?'':'+') + Number(stats.avgTestScoreDif).toFixed(2)}</span>
+                </div>
               </div>
               <div className="annotation">
                 Average test score
@@ -166,8 +170,12 @@ function getStatistics(stats) {
             <div className={getClassForScoreStatistics(stats.avgVocabularyScore)}>
               <div className="stat-number-progress"></div>
               <div className="stat-number-progress-percentage" style={{width: stats.avgVocabularyScore + "%"}}></div>
-              <div className="number">
-                {Number(stats.avgVocabularyScore).toFixed(2)}
+              <div
+                className={Number(stats.avgVocabularyScoreDif) > 0 ? "number stat-number-dif-up" : "number stat-number-dif-down"}>
+                <div className="tooltip">
+                  {Number(stats.avgVocabularyScore).toFixed(2)}
+                  <span className="tooltiptext">{(Number(stats.avgPronunciationScoreDif)<0?'':'+') + Number(stats.avgVocabularyScoreDif).toFixed(2)}</span>
+                </div>
               </div>
               <div className="annotation">
                 Average vocabulary score
@@ -178,8 +186,12 @@ function getStatistics(stats) {
             <div className={getClassForScoreStatistics(stats.avgPronunciationScore)}>
               <div className="stat-number-progress"></div>
               <div className="stat-number-progress-percentage" style={{width: stats.avgPronunciationScore + "%"}}></div>
-              <div className="number">
-                {Number(stats.avgPronunciationScore).toFixed(2)}
+              <div
+                className={Number(stats.avgPronunciationScoreDif) > 0 ? "number stat-number-dif-up" : "number stat-number-dif-down"}>
+                <div className="tooltip">
+                  {Number(stats.avgPronunciationScore).toFixed(2)}
+                  <span className="tooltiptext">{(Number(stats.avgPronunciationScoreDif)<0?'':'+') + Number(stats.avgPronunciationScoreDif).toFixed(2)}</span>
+                </div>
               </div>
               <div className="annotation">
                 Average pronunciation score
