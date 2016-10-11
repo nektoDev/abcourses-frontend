@@ -150,6 +150,18 @@ function getStatistics(stats) {
             </div>
           </Col>
 
+          <Col lg={2} md={4} sm={6} xs={6}  smOffset={3} xsOffset={3}  mdOffset={0} lgOffset={0}>
+            <div className={getClassForScoreStatistics(stats.avgTestScore)}>
+              <div className="stat-number-progress"></div>
+              <div className="stat-number-progress-percentage" style={{width: stats.avgTestScore + "%"}}></div>
+              <div className="number">
+                {Number(stats.avgTestScore).toFixed(2)}
+              </div>
+              <div className="annotation">
+                Average test score
+              </div>
+            </div>
+          </Col>
           <Col lg={2} md={4} sm={6} xs={6}>
             <div className={getClassForScoreStatistics(stats.avgVocabularyScore)}>
               <div className="stat-number-progress"></div>
@@ -171,18 +183,6 @@ function getStatistics(stats) {
               </div>
               <div className="annotation">
                 Average pronunciation score
-              </div>
-            </div>
-          </Col>
-          <Col lg={2} md={4} sm={6} xs={6}  smOffset={3} xsOffset={3}  mdOffset={0} lgOffset={0}>
-            <div className={getClassForScoreStatistics(stats.avgTestScore)}>
-              <div className="stat-number-progress"></div>
-              <div className="stat-number-progress-percentage" style={{width: stats.avgTestScore + "%"}}></div>
-              <div className="number">
-                {Number(stats.avgTestScore).toFixed(2)}
-              </div>
-              <div className="annotation">
-                Average test score
               </div>
             </div>
           </Col>
