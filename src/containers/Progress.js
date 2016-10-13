@@ -22,6 +22,7 @@ class Progress extends Component {
 
   render() {
     const {actions, student, progress, progressData, progressDataMap} = this.props;
+    progress
     return <ProgressComponent actions={actions} student={student} progress={progress} progressData={progressData}
                               progressDataMap={progressDataMap}/>;
   }

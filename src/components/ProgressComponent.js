@@ -89,7 +89,7 @@ let ProgressComponent = (props) => {
 };
 
 function getTest(data) {
-  return _.sortBy(data.test, v => (-Number(v.date))).map(v => (
+  return _.sortBy(data.test, v => (-moment(v.date))).map(v => (
     <TableRow key={'row-' + v.date}>
       <TableRowColumn key={'date-' + v.date}>{moment(Number(v.date)).format('Do MMMM YYYY')}</TableRowColumn>
       <TableRowColumn key={'test-' + v.date}>{v.value}</TableRowColumn>
@@ -99,7 +99,7 @@ function getTest(data) {
 
 function getBest(progressDataMap) {
   return (
-    _.sortBy(Object.keys(progressDataMap), k => (-Number(k))).map(key => {
+    _.sortBy(Object.keys(progressDataMap), k => (-moment(k))).map(key => {
       if (progressDataMap[key].pronunciation == 100 && progressDataMap[key].vocabulary == 100) {
         return (
           <TableRow key={'row-' + key}>
@@ -127,7 +127,7 @@ function getBestCount(progressDataMap) {
 
 function getRows(progressDataMap) {
   return (
-    _.sortBy(Object.keys(progressDataMap), k => (-Number(k))).map(key => (
+    _.sortBy(Object.keys(progressDataMap), k => (-moment(k))).map(key => (
         <TableRow key={'row-' + key}
                   style={(progressDataMap[key].pronunciation == 100 && progressDataMap[key].vocabulary == 100) ? {backgroundColor: lightGreenA100} : ''}>
           <TableRowColumn key={'date-' + key}>{moment(key).format('Do MMMM YYYY')}</TableRowColumn>
