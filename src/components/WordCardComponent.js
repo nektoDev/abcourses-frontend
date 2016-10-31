@@ -8,7 +8,7 @@ require('styles//WordCard.css');
 
 const shownAnswerStyle = {
   opacity: 1,
-  fontSize: '100%',
+  fontSize: '120%',
   'transition': 'opacity 0.4s linear'
 };
 const hiddenAnswerStyle = {
@@ -16,15 +16,20 @@ const hiddenAnswerStyle = {
   fontSize: '100%',
   'transition': 'opacity 0.4s linear'
 };
+const customStyle = {
+  paddingTop: '0.5ex',
+  paddingBottom: '0.5ex',
+};
 
 let WordCardComponent = (props) => (
   <Card key={'card-'+props.word.is} className='check-word-card'
-        style={props.word.checked ? {backgroundColor: lightBlue50} : {} }
+        style={props.word.checked ? {lineHeight: 1.5, fontSize:'80%', backgroundColor: lightBlue50} : {lineHeight: 1.5} }
   >
     <CardTitle key={'card-header-'+props.word.id}
                title={<div onClick={props.toggleAnswerStateAction.bind(null, props.word)}>{props.answer}</div>}
                showExpandableButton={true}
                titleStyle={props.word.checked ? shownAnswerStyle : hiddenAnswerStyle}
+               style={customStyle}
                subtitle={<div onClick={props.toggleAnswerStateAction.bind(null, props.word)}>{props.question}</div>}
                subtitleStyle={{fontSize:'100%'}}
     >
