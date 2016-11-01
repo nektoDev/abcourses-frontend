@@ -10,5 +10,5 @@ npm run dist
 npm run release:$RELEASE
 VERSION=`jq '.version' package.json | tr -d '"'`
 echo $VERSION
-docker build --rm -t nektodev/baskinov-frontend:$VERSION -t nektodev/baskinov-frontend .
-docker push nektodev/baskinov-frontend
+docker build --rm -t nektodev/abcourses-frontend:$VERSION -t nektodev/abcourses-frontend .
+docker push nektodev/abcourses-frontend
