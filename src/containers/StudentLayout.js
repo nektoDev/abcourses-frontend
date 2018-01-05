@@ -32,12 +32,13 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   const actions = {
-
   };
   const actionMap = { actions: bindActionCreators(actions, dispatch) };
   actionMap.actions.listStudents = require('../actions/studentsActions.js').listStudents(dispatch);
   actionMap.actions.getStudent = require('../actions/studentsActions.js').getStudent(dispatch);
   actionMap.actions.getStudentStatistics = require('../actions/studentsActions.js').getStudentStatistics(dispatch);
+  actionMap.actions.updateHomework = require('../actions/studentsActions.js').updateHomework(dispatch)
+
   return actionMap;
 }
 

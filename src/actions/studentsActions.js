@@ -59,6 +59,13 @@ export function getStudentStatistics(dispatch) {
   }
 }
 
+export function updateHomework(dispatch) {
+
+  return (id) => {
+    axios.post(config.default.apiHost + 'import', jsonrpc.request('1', 'doImportHomework', [id, true]));
+  }
+}
+
 export function getStudentProgress(dispatch) {
 
   return (id) => {
