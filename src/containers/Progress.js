@@ -87,7 +87,9 @@ function convertProgressData(progress) {
     vocData.data.push(progress[key].vocabulary);
     pronData.data.push(progress[key].pronunciation);
     grammarData.data.push(progress[key].grammar);
-    testData.data.push(progress[key].test);
+    if (progress[key].test && progress[key].test.length > 0) {
+      testData.data.push(progress[key].test);
+    }
   });
 
   progressData.labels = Object.keys(progress);
