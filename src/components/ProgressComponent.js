@@ -42,7 +42,7 @@ let ProgressComponent = (props) => {
       <Line data={props.progressData} options={options}/>
 
       <Row>
-        <Col lg={6} sm={12} md={6}>
+        <Col lg={5} sm={12} md={5}>
           <Col xs={12}>
             <h2>Test results</h2>
             <Table displayRowCheckbox={false}>
@@ -69,7 +69,7 @@ let ProgressComponent = (props) => {
             </Table>
           </Col>
         </Col>
-        <Col lg={6} sm={12} md={6}>
+        <Col lg={7} sm={12} md={7}>
           <h2>Progress data</h2>
           <Table displayRowCheckbox={false}>
             <TableBody displayRowCheckbox={false}>
@@ -77,6 +77,7 @@ let ProgressComponent = (props) => {
                 <TableRowColumn>Date</TableRowColumn>
                 <TableRowColumn>Pronunciation</TableRowColumn>
                 <TableRowColumn>Vocabulary</TableRowColumn>
+                <TableRowColumn>Grammar</TableRowColumn>
                 <TableRowColumn>Test</TableRowColumn>
               </TableRow>
               {getRows(props.progressDataMap)}
@@ -133,6 +134,7 @@ function getRows(progressDataMap) {
           <TableRowColumn key={'date-' + key}>{moment(key).format('Do MMMM YYYY')}</TableRowColumn>
           <TableRowColumn key={'pron-' + key}>{progressDataMap[key].pronunciation}</TableRowColumn>
           <TableRowColumn key={'voc-' + key}>{progressDataMap[key].vocabulary}</TableRowColumn>
+          <TableRowColumn key={'grammar-' + key}>{progressDataMap[key].grammar}</TableRowColumn>
           <TableRowColumn key={'test-' + key}>{progressDataMap[key].test}</TableRowColumn>
         </TableRow>
       )

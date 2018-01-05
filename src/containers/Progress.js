@@ -58,11 +58,23 @@ function convertProgressData(progress) {
     hoverBorderColor: 'rgba(255,132,99,1)',
     data: []
   };
+  let grammarData = {
+    label: 'Grammar',
+    backgroundColor: 'rgba(99,255,99,0.0)',
+    borderColor: '#c7b042',
+    borderWidth: 1,
+    pointRadius: 1,
+    hoverBackgroundColor: 'rgba(99,255,99,0.4)',
+    hoverBorderColor: '#af8e25',
+    showLine: true,
+    spanGaps: true,
+    data: []
+  };
   let testData = {
     label: 'Test',
     backgroundColor: 'rgba(99,255,99,0.0)',
     borderColor: '#81C784',
-    borderWidth: 2,
+    borderWidth: 1,
     pointRadius: 1,
     hoverBackgroundColor: 'rgba(99,255,99,0.4)',
     hoverBorderColor: '#4CAF50',
@@ -74,12 +86,14 @@ function convertProgressData(progress) {
   Object.keys(progress).map(key => {
     vocData.data.push(progress[key].vocabulary);
     pronData.data.push(progress[key].pronunciation);
+    grammarData.data.push(progress[key].grammar);
     testData.data.push(progress[key].test);
   });
 
   progressData.labels = Object.keys(progress);
   progressData.datasets.push(vocData);
   progressData.datasets.push(pronData);
+  progressData.datasets.push(grammarData);
   progressData.datasets.push(testData);
 
   for (var i = 0; i < progressData.labels.length; i++) {
