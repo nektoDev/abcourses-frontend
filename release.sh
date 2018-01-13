@@ -11,4 +11,5 @@ npm run release:$RELEASE
 VERSION=`jq '.version' package.json | tr -d '"'`
 echo $VERSION
 docker build --rm -t nektodev/abcourses-frontend:$VERSION -t nektodev/abcourses-frontend .
-docker push nektodev/abcourses-frontend
+docker push nektodev/abcourses-frontend:$VERSION
+docker push nektodev/abcourses-frontend:latest
