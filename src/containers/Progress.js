@@ -74,7 +74,7 @@ function convertProgressData(progress) {
     label: 'Test',
     backgroundColor: 'rgba(99,255,99,0.0)',
     borderColor: '#81C784',
-    borderWidth: 1,
+    borderWidth: 2,
     pointRadius: 1,
     hoverBackgroundColor: 'rgba(99,255,99,0.4)',
     hoverBorderColor: '#4CAF50',
@@ -87,9 +87,7 @@ function convertProgressData(progress) {
     vocData.data.push(progress[key].vocabulary);
     pronData.data.push(progress[key].pronunciation);
     grammarData.data.push(progress[key].grammar);
-    if (progress[key].test && progress[key].test.length > 0) {
-      testData.data.push(progress[key].test);
-    }
+    testData.data.push(progress[key].test);
   });
 
   progressData.labels = Object.keys(progress);
